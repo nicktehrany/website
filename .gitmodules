@@ -5,4 +5,4 @@
 [submodule "public"]
 	path = public
 	url = https://github.com/nicktehrany/nicktehrany.github.io.git
-	branch = main
+	branch = master
