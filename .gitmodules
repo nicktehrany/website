@@ -3,6 +3,6 @@
 	url = https://github.com/rhazdon/hugo-theme-hello-friend-ng.git
 	ignore = dirty
 [submodule "public"]
-	path = public
+	path = website/public
 	url = https://github.com/nicktehrany/nicktehrany.github.io.git
 	branch = master
