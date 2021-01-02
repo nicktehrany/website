@@ -2,7 +2,7 @@
 	path = website/themes/hello-friend-ng
 	url = https://github.com/rhazdon/hugo-theme-hello-friend-ng.git
 	ignore = dirty
-[submodule "public"]
-	path = website/public
+[submodule "website/website/public"]
+	path = website/website/public
 	url = https://github.com/nicktehrany/nicktehrany.github.io.git
 	branch = master
