@@ -39,7 +39,7 @@ paginate     = 10
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "nick's website"
+      logoText = "$ cd nick's website"
       logoHomeLink = "/"
     # or
     #
@@ -55,7 +55,7 @@ paginate     = 10
   [[menu.main]]
     identifier = "thesis"
     name       = "Thesis"
-    url        = "/posts"
+    url        = "/thesis"
 
   [[menu.main]]
     identifier = "projects"
@@ -65,7 +65,7 @@ paginate     = 10
   [[menu.main]]
     identifier = "notes"
     name       = "Uni Notes"
-    url        = "/posts"
+    url        = "/notes"
 
   [[params.social]]
     name = "github"

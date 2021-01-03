@@ -1,5 +1,4 @@
 +++
-categories = ["Hugo"]
 date = "2020-08-25"
 description = "BSc Computer Science Thesis"
 featuredalt = ""
@@ -39,4 +38,4 @@ showing that this new generation of file systems can outperform conventional fil
 Additionally, we identify that the average cost of persistence with the PMDK is 3x higher
 than volatile use, and provide guidelines for minimizing persistence software overheads.
 
-[Full Thesis](Nick_Tehrany_VU_BSc_Thesis.pdf)
+[Full Thesis](/thesis/Nick_Tehrany_VU_BSc_Thesis.pdf)
