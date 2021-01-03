@@ -33,27 +33,53 @@
                 </div>
             {{ end }}
         {{ else }}
-            {{ range $paginator.Pages.GroupByDate "2006"}}
-            <div class="posts-group">
-                <div class="post-year">{{ .Key }}</div>
+            {{ if eq .Type "projects"}}
+                {{ range $paginator.Pages.GroupByDate "2006"}}
+                <div class="posts-group">
 
-                <ul class="posts-list">
-                    {{ range .Pages }}
-                        <li class="post-item">
-                            <a href="{{.Permalink}}">
-                                <span class="post-title">{{.Title}}</span>
-                                <span class="post-day">
-                                    {{ if .Site.Params.dateformShort }}
-                                        {{ .Date.Format .Site.Params.dateformShort }}
+                    <ul class="posts-list">
+                        {{ range .Pages }}
+                            <li class="post-item">
+                                <a href="{{.Permalink}}">
+                                    <span class="post-title">{{.Title}}</span>
+                                    {{ if eq .Title "Active Projects"}}
+                                        <span class="post-count">
+                                            {{ (len (where .Site.Pages ".Type" "active")) }}
+                                        </span>
                                     {{ else }}
-                                        {{ .Date.Format "Jan 2"}}
+                                    <span class="post-count">
+                                        {{ (len (where .Site.Pages ".Type" "completed")) }}
+                                    </span>
                                     {{ end }}
-                                </span>
-                            </a>
-                        </li>
-                    {{ end }}
-                </ul>
-            </div>
+                                </a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
+            {{ else }}
+                {{ range $paginator.Pages.GroupByDate "2006"}}
+                <div class="posts-group">
+                    <div class="post-year">{{ .Key }}</div>
+
+                    <ul class="posts-list">
+                        {{ range .Pages }}
+                            <li class="post-item">
+                                <a href="{{.Permalink}}">
+                                    <span class="post-title">{{.Title}}</span>
+                                    <span class="post-day">
+                                        {{ if .Site.Params.dateformShort }}
+                                            {{ .Date.Format .Site.Params.dateformShort }}
+                                        {{ else }}
+                                            {{ .Date.Format "Jan 2"}}
+                                        {{ end }}
+                                    </span>
+                                </a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
             {{ end }}
         {{ end }}
     {{ partial "pagination.html" . }}

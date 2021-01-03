@@ -6,7 +6,7 @@ featuredpath = "date"
 linktitle = "projects"
 title = "Dotfiles"
 slug = "Dotfiles"
-type = "post"
+type = "active"
 aliases = "/projects/"
 +++
 
