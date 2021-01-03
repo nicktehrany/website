@@ -48,9 +48,9 @@ paginate     = 10
 
   # And you can even create generic menu
   [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/posts"
+    identifier = "publications"
+    name       = "Publications"
+    url        = "/publications"
 
   [[menu.main]]
     identifier = "thesis"
@@ -60,7 +60,7 @@ paginate     = 10
   [[menu.main]]
     identifier = "projects"
     name       = "Projects"
-    url        = "/posts"
+    url        = "/projects"
 
   [[menu.main]]
     identifier = "notes"
