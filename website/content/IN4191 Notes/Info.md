@@ -1,11 +1,10 @@
 +++
 date = "2021-01-01"
 description = "IN4191 Security and Cryptography Notes"
-linktitle = "date"
+linktitle = ""
 publisdate = "2021-01-01"
 title = "Info"
 slug = "Info"
-x = "tesy"
 +++
 
 
