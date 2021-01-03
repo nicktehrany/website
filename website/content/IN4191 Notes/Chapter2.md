@@ -5,4 +5,5 @@ linktitle = ""
 publisdate = "2021-01-03"
 title = "Chapter 2"
 slug = "Chapter 2"
+type = "notes"
 +++
