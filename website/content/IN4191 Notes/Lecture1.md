@@ -25,4 +25,16 @@ Security means:
 
 Kerkhoff's principle: The adversary knows all details about the crypto system except the private key.
 
-$$\int_{a}^{b} x^2 dx$$
+$$Enc_k$$: plaintext to ciphertext  
+$$Dec_k$$: ciphertext to plaitnext  
+Encryption key: $$k$$  
+Decryption key: $$k'$$  
+
+if $$k=k'$$, symmetric key or private key encryption  
+if $$k \neq k'$$, asymmetric key or public key encryption
+
+#### Information Theoretic Security
+
+Entropy:
+
+$$-\sum_{i=1}^np_i*log_2p_i$$
