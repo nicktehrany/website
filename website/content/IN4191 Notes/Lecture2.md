@@ -85,12 +85,11 @@ and use statistics to find the plaintext letter.
 Permuatation ciphers work by having a permuatation $$\sigma \in S_n$$, for example
 
 $$ \sigma =
-    \begin{pmatrix}
-        1 & 2 & 3 & 4 & 5 \\
-        2 & 4 & 1 & 3 & 5
-    \end{pmatrix}
-    =(1243)\in S_5)
-$$
+\begin{pmatrix}
+   1 & 2 & 3 & 4 & 5 \\
+   2 & 4 & 1 & 3 & 5
+\end{pmatrix}
+=(1243) \in S_5$$
 
 Taking the plaintext and splitting it into all lowercase 5 letter chunks, one can use the defined permutation to encrypt
 the plaintext one chunk at a time. Then spaces can be removed to hide underlying structure of the language.
@@ -102,9 +101,8 @@ given ciphertext and the chosen plaintext. Sequences will repeat key at modulo $
 **cadbehfigjmknlorpsqtwuxvyz** gives the resulting permutation of
 
 $$\begin{pmatrix}
-    1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & ... \\
-    2 & 4 & 1 & 3 & 5 & 7 & 9 & 6 & 8 & 10 & ...
-\end{pmatrix}
-$$
+   1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & ... \\
+   2 & 4 & 1 & 3 & 5 & 7 & 9 & 6 & 8 & 10 & ...
+\end{pmatrix}$$
 
 where modulo 5 the permutation starts repeating.
