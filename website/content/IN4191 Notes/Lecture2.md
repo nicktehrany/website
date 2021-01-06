@@ -30,15 +30,19 @@ called _symmetric cryptosystems_.
 Another form of system that uses different types of keys; public key for encryption and private key for decryption, is
 known as an _asymmetric cryptosystem_ or _public key cryptosystem_
 
-Historical ciphers can easily be broken based on the properties of the underlying language (english). The frequencies of
+Historical ciphers can easily be broken with _Cryptanalysis_ based on the properties of the underlying language (english). The frequencies of
 most commonly appearing letters (E and T) will be visible in certain ciphers, or the most common bigrams (TH and HE), or
 or trigrams (THE and ING).
 
+#### Kerckhoff's Principle
+
+"The method must not be required to be secret, and it must be able to fall into the hands of the enemy without inconvenience."
+
 ##### Shift Cipher
 
-One of the simplest ciphers is the shift cipher, which shifts the letters in the alphabet based on some key. 
+One of the simplest ciphers is the shift cipher, which shifts the letters in the alphabet based on some key.
 Commonly called the Ceasar cipher, as he used this algorithm with a key of three. For example with 3 as a key, the
-letter A would become the letter D.
+letter A would become the letter D. ($$c=m+k$$ mod 26)
 
 Each letter in the alphabet is associated with a number (0-25), which is used to convert plaintext into a sequence of
 numbers and then shifted by adding the key to each value modulo 26. Hence, this cipher is a _stream cipher_ calculating
@@ -50,7 +54,7 @@ $$\Delta[X,Y]=\frac{1}{2}\sum_{u\in V} \displaystyle\left\lvert \underset{X \lef
 \underset{Y \leftarrow D_2}{Pr} [Y=u] \right\rvert$$
 
 with random variables $$X$$ and $$Y$$, $$V$$ the support of $$X$$ and $$Y$$ (all values which can occur for $$X$$ and
-$$Y$$ with non-zero probability). After doing this calculation with all possible values for key $$k$$ will result in
+$$Y$$ with non-zero probability). After doing this calculation with all possible values for key $$k$$ the result will be
 26 different distributions. The one with the lowest is the one most likely to be the key.
 
 ##### Substitution Cipher
