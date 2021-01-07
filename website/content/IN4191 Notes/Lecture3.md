@@ -124,9 +124,13 @@ $$H(K,C)=H(K)+H(P)$$
 
 When information about a key is leaked by a ciphertext, a certain ciphertext rules out a subset of the keys, the remaining possible, but incorrect keys, are called _spurious keys_.
 
+The entropy of a natural language is calculated as
+
+$$H_L=\lim_{n\rightarrow\infty}\frac{H(P^n)}{n}$$
+
 The redundancy of a language is given as
 
-$$R_L=1=\frac{H_L}{log_2\#P}$$
+$$R_L=1-\frac{H_L}{log_2\#P}$$
 
 and expresses the percentage of the text in the language that can be removed without losing its meaning.
 
