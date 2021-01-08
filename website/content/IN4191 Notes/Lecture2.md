@@ -6,7 +6,7 @@ publisdate = "2021-01-05"
 title = "Lecture 2: Classical Systems"
 slug = "Lecture 2"
 type = "notes"
-katex = "true"
+mathjax = "true"
 markup = "mmark"
 +++
 
@@ -16,10 +16,10 @@ An encryption algoithm or ciper is the transformation of plaintext to ciphertext
 
 $$c=e_k(m)$$
 
-with $$m$$ being the plaintext,  
-$$e$$ being the cipher function,  
-$$k$$ being the secret key,  
-$$c$$ being the ciphertext
+with $m$ being the plaintext,  
+$e$ being the cipher function,  
+$k$ being the secret key,  
+$c$ being the ciphertext
 
 The reverse process is called decryption or decipherment, depicted as
 
@@ -42,7 +42,7 @@ or trigrams (THE and ING).
 
 One of the simplest ciphers is the shift cipher, which shifts the letters in the alphabet based on some key.
 Commonly called the Ceasar cipher, as he used this algorithm with a key of three. For example with 3 as a key, the
-letter A would become the letter D. ($$c=m+k$$ mod 26)
+letter A would become the letter D. ($c=m+k$ mod 26)
 
 Each letter in the alphabet is associated with a number (0-25), which is used to convert plaintext into a sequence of
 numbers and then shifted by adding the key to each value modulo 26. Hence, this cipher is a _stream cipher_ calculating
@@ -53,17 +53,17 @@ Breaking the shift cipher with statistical distance given as
 $$\Delta[X,Y]=\frac{1}{2}\sum_{u\in V} \displaystyle\left\lvert \underset{X \leftarrow D_1}{Pr} [X=u]-
 \underset{Y \leftarrow D_2}{Pr} [Y=u] \right\rvert$$
 
-with random variables $$X$$ and $$Y$$, $$V$$ the support of $$X$$ and $$Y$$ (all values which can occur for $$X$$ and
-$$Y$$ with non-zero probability). After doing this calculation with all possible values for key $$k$$ the result will be
+with random variables $X$ and $Y$, $V$ the support of $X$ and $Y$ (all values which can occur for $X$ and
+$Y$ with non-zero probability). After doing this calculation with all possible values for key $k$ the result will be
 26 different distributions. The one with the lowest is the one most likely to be the key.
 
 ##### Substitution Cipher
 
 Problem with shift cipher is too small key space, substitution uses a permutation of the alphabet to substitute each letter
 with a letter from the permutation using a chosen permutation. Here the key space is equal to the number of possible
-permutations $$26!\approx 4.03*10^{26}\approx 2^{88}$$.
+permutations $26!\approx 4.03*10^{26}\approx 2^{88}$.
 
-Feasibility of brute forcing is given as under $$2^{80}$$ steps.
+Feasibility of brute forcing is given as under $2^{80}$ steps.
 
 Substitution cipher can still be broken using statistical distance as with the shift cipher, and the details of the
 underlying language.
@@ -86,7 +86,7 @@ and use statistics to find the plaintext letter.
 
 ##### Permutation Cipher
 
-Permuatation ciphers work by having a permuatation $$\sigma \in S_n$$, for example
+Permuatation ciphers work by having a permuatation $\sigma \in S_n$, for example
 
 $$ \sigma =
 \begin{pmatrix}

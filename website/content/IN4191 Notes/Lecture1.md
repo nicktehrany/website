@@ -6,7 +6,7 @@ publisdate = "2021-01-04"
 title = "Lecture 1: Introduction"
 slug = "Lecture 1"
 type = "notes"
-katex = "true"
+mathjax = "true"
 markup = "mmark"
 +++
 
@@ -26,13 +26,13 @@ Security means:
 
 Kerkhoff's principle: The adversary knows all details about the crypto system except the private key.
 
-$$Enc_k$$: plaintext to ciphertext  
-$$Dec_k$$: ciphertext to plaitnext  
-Encryption key: $$k$$  
-Decryption key: $$k'$$  
+$Enc_k$: plaintext to ciphertext  
+$Dec_k$: ciphertext to plaitnext  
+Encryption key: $k$  
+Decryption key: $k'$  
 
-if $$k=k'$$, symmetric key or private key encryption  
-if $$k \neq k'$$, asymmetric key or public key encryption
+if $k=k'$, symmetric key or private key encryption  
+if $k \neq k'$, asymmetric key or public key encryption
 
 #### Information Theoretic Security
 

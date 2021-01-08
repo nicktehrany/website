@@ -6,7 +6,7 @@ publisdate = "2021-01-07"
 title = "Lecture 4: Defining Security"
 slug = "Lecture 4"
 type = "notes"
-katex = "true"
+mathjax = "true"
 markup = "mmark"
 +++
 
@@ -16,16 +16,16 @@ Security games are used to define security for cryptographic components, which c
 
 $$Adv_v^X(A,t)=Pr[A \text{ wins the game X for }v=log_2N \text{ in time less than }t]$$
 
-The quadratic residue of a value check all values that it comprises (i.e. with value 7, $$ℤ_7={0,1,2,3,4,5,6}$$), and square each containing value (except 0 of course) module the value itself. For the example with ℤ=7 this will be,
+The quadratic residue of a value check all values that it comprises (i.e. with value 7, $\mathbb{Z}_7={0,1,2,3,4,5,6}$), and square each containing value (except 0 of course) module the value itself. For the example with $\mathbb{Z}=7$ this will be,
 
-$$1^2\equiv1 \text{ mod }7\\
+$$\displaylines{1^2\equiv1 \text{ mod }7\\
 2^2\equiv4 \text{ mod }7\\
 3^2\equiv2 \text{ mod }7\\
 4^2\equiv2 \text{ mod }7\\
 5^2\equiv4 \text{ mod }7\\
-6^2\equiv1 \text{ mod }7$$
+6^2\equiv1 \text{ mod }7}$$
 
-Where the residue class is all remainders, in this case $$Q_7={1,2,4}$$. 
+Where the residue class is all remainders, in this case $Q_7={1,2,4}$.
 
 For the QUADRES game, where the challenger picks a value $$a$$ to be a quadratic residue and the adversary guesses if it is a quadratic residue or not (50/50 chance with random guessing). Hence, the advantage is zero if the adversary just guesses, which makes the function
 
@@ -33,10 +33,10 @@ $$Adv_v^{QUADRES}(A)=2*\lvert Pr[A \text{ wins the QUADRES game for }v=log_2N]-\
 
 ### Discrete Logarithms (Chapter 3.1)
 
-The discrete log problem (DLP) states that given a finite group $$G$$, and g,h$$\in G$$
+The discrete log problem (DLP) states that given a finite group $G$, and $g,h \in G$
 
-$$g^x=h\\
-\text{ or }x=dlog_g(h)$$
+$$\displaylines{g^x=h
+\text{ or }x=dlog_g(h)}$$
 
 ### Defining Security (Chapter 11)
 
@@ -46,9 +46,9 @@ Three aspects of modern cryptography:
 - **Schemes:** Once it has a security definition, we want to design schemes which it hoped will meet the security definition (i.e. system whose security relies on factoring large numbers).
 - **Proofs:** Ask whether the design meets the security definition.
 
-A pseudo random function (PRF) is a function that appears random to the adversary, such that he cannot predict the output. 
+A pseudo random function (PRF) is a function that appears random to the adversary, such that he cannot predict the output.
 
-In the security game, instead of giving the adversary the Function $$F$$ and value pair Ix,y), the adversary is provided with a family of functions $${F_K}K$$ from which one function is chosen with private key $$K$$ and the adversary has access to an oracle for querying function applications. This is done, as if the adversary is supplied directly with the function, he can directly apply the function and win, and without the oracle the adversary would have no chance. The PRF security game will be,
+In the security game, instead of giving the adversary the Function $F$ and value pair (x,y), the adversary is provided with a family of functions $\\{F_k\\} K$ from which one function is chosen with private key $K$ and the adversary has access to an oracle for querying function applications. This is done, as if the adversary is supplied directly with the function, he can directly apply the function and win, and without the oracle the adversary would have no chance. The PRF security game will be,
 
 ![PRF_sec_game](/images/IN4191/PRF_sec_game.png)
 
@@ -58,7 +58,7 @@ One way functions (OWF) work by giving the adversary a public function and askin
 
 ![OWF_sec_game](/images/IN4191/OWF_sec_game.png)
 
-Examples of OWFs are the discrete logarithm problem and RSA, but RSA also has an extra value $$d$$ for efficiently inverting the function, called the _trapdoor_.
+Examples of OWFs are the discrete logarithm problem and RSA, but RSA also has an extra value $d$ for efficiently inverting the function, called the _trapdoor_.
 
 #### Public Key Cryptography
 
@@ -99,8 +99,7 @@ Definition: A crypto algorithm is secure if it is semantically secure against a 
 Definition: An encryption algorithm is secure if it is IND-CCA secure.
 Theorem: A system that is IND-PASS secure must be semantically secure against passive adversaries.
 
-$$\prod \text{ is IND-CCA} \Longrightarrow\prod \text{ is IND-CPA}\Longrightarrow\prod\text{ is IND-PASS}\\
-\prod \text{ is IND-XXX}\Longrightarrow\prod\text{ is OW-XXX}$$
+$$\displaylines{\prod \text{ is IND-CCA} \Longrightarrow\prod \text{ is IND-CPA}\Longrightarrow\prod\text{ is IND-PASS}\\ \prod \text{ is IND-XXX}\Longrightarrow\prod\text{ is OW-XXX}}$$
 
 #### Other Notions of Security
 
