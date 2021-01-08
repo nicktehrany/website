@@ -6,5 +6,5 @@ and the website is available at [https://nicktehrany.github.io](https://nicktehr
 
 The website is powered by [Hugo](https://gohugo.io/) and uses the [hello-friend-ng](https://github.com/rhazdon/hugo-theme-hello-friend-ng) theme.
 
-For math functions use `$` latex code `$` for inline math and `$$` latex code `$$` for blocks, but if blocks contain newline (`\\`)
-the entire latex math code needs to be encapsulated in a `$$\displaylines{latex code}$$`
+For math functions use `$ latex code $` for inline math and `$$ latex code $$` for blocks, but if blocks contain newline (`\\`)
+the entire latex math code needs to be encapsulated in a `$$\displaylines{latex \\ code}$$`
