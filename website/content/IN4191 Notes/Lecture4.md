@@ -66,3 +66,52 @@ Users hold a public and private key pair, where the public key is used to encryp
 
 #### Security of Encryption
 
+Different types of attacks:
+
+- **PASS:** Passive attack where the adversary should not learn the message underlying a specific ciphertext. E.g. OW-PASS depicted below, the same applies to public key crypto with public and private key pairs
+
+![ow-pass](/images/IN4191/OW_PASS.png)
+
+- **CPA:** Chosen plaintext attack where the adversary also has access to an oracle for encrypting a chosen plaintext. This is done as with PASS, the adversary has very limited power.
+E.g. in symmetric crypto this would be as follows,
+
+![OW-CPA](/images/IN4191/OW_CPA.png)
+
+Note that in the previous game with public crypto, it is also CPA as the adversary has the public key and can encrypt whatever plaintext he chooses.
+
+- **CCA:** Chosen ciphertext attack gives the adversary an oracle to decrypt chosen ciphertexts, except of course decrypting the original ciphertext. This game looks as follows for symmetric and public crypto,
+
+![OW-CCA](/images/IN4191/OW-CCA.png)
+
+As this notion ony provides a sense of fully breaking the encryption but not retrieving parts of the message, there are additional security classifications about how secure a message should be, such that the adversary cannot retrieve any information about the plaintext.
+
+- **Perfect Security:** As was seen in earlier chapters, perfect security is when the adversary cannot gain any information about the message, by using a key with the same length as the plaintext. This is not used in practice as it is highly unpractical.
+- **Semantic Security:** Similar to perfect security but the run time of the adversary is bounded by a polynomial function of the underlying security parameter (i.e. the key size).
+- **IND Security:** As semantic security is difficult to show, indistinguishability (IND) is easier to show and a system that is IND secure is also semantically secure. IND works in two stages,
+  - **Find** stage where the adversary produces two plaintexts of the same length
+  - **Guess** stage where the adversary is given the encryption of one of the plaintexts ($$m_b$$) and has to guess the bit $$b$$ with probability greater than one half.
+
+![IND-CCA](/images/IN4191/IND-CCA.png)
+
+Any encryption function that is IND-CPA secure must be probabilistic.
+
+Definition: A crypto algorithm is secure if it is semantically secure against a CPA attack.
+Definition: An encryption algorithm is secure if it is IND-CCA secure.
+Theorem: A system that is IND-PASS secure must be semantically secure against passive adversaries.
+
+$$\prod \text{ is IND-CCA} \Longrightarrow\prod \text{ is IND-CPA}\Longrightarrow\prod\text{ is IND-PASS}\\
+\prod \text{ is IND-XXX}\Longrightarrow\prod\text{ is OW-XXX}$$
+
+#### Other Notions of Security
+
+- Many time security: How many times can we use the LR oracle?
+- Real or random: RoR oracle encrypts either the real message or a random message.
+- Lunchtime attack (CCA1): Adversary has the decryption oracle during the find stage for some time.
+- Nonce-based encryption: Deterministic algorithms are not IND-CPA secure, therefore use a nonce (number used once) to provide some randomness.
+- Data encapsulation mechanism: Symmetric system but the key is used only once.
+- Non-malleability: Based on having the ciphertext of an unknown plaintext, the adversary can compute a new ciphertext for a related plaintext.
+- Plaintext aware: It is computationally difficult to construct a valid ciphertext without being given the corresponding plaintext.
+
+![Notions of Security](/images/IN4191/NotionsOfSec.png)
+
+Random Oracle Model (ROM): All parties have a random function with domain {0,1}* and a finite codomain C, the challenger has the control of the oracle, and the adversary can call her. This kind of function cannot exist in the real world, but hash functions act as such an oracle.
