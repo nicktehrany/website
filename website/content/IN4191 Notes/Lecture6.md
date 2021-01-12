@@ -71,7 +71,8 @@ The stages of the $F$ function are:
 
 DES key scheduling takes the 56 bit key (it's 64 bits but 8 bits are parity bits for error detection at every 8th bit, so 8 16 ... 64) and permute the bits with the PC-1 permutation. The output of the permutation is divided into two 28 bit halfs $C_0$ the left half and $D_0$ the right. Each round we compute
 
-$$\displaylines{C_i\leftarrow C_{i-1}\lll p_i,\\ D_i\leftarrow D_{i-1}\lll}p_i$$
+$$C_i\leftarrow C_{i-1}\lll p_i,$$
+$$D_i\leftarrow D_{i-1}\lll p_i$$
 
 where $x \lll p_i$ means performing a cyclic shift on $x$ to the left bu $p_i$ positions. If the round number is 1,2,9,16 we shift left by one position, otherwise by two. The two halfs $C_0$ and $D_0$ are joined back together and are permuted again with the PC-2 permutation. Visually depicted below
 
