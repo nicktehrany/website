@@ -74,7 +74,11 @@ If $p$ and $q$ are both prime, then $\phi(p*q)=(p-1)(q-1)$.
 
 #### Multiplicative Inverse Modulo
 
-Finding a $c$ such that $a*c=c*a=1\text{ mod } N$, such a $c$ is called the multiplicative inverse modulo $N$ of $a$: $a^{-1}$. Such a $c$ only exists when $a$ and the module $N$ are coprime.
+Finding a $c$ such that
+
+$$a*c=c*a=1\text{ mod } N$$
+
+such a $c$ is called the multiplicative inverse modulo $N$ of $a$: $a^{-1}$. Such a $c$ only exists when $a$ and the module $N$ are coprime.
 
 If $p$ is a prime, then all non-zero elements have a multiplicative inverse in $\mathbb{Z}_N$, thus $a*x=b \text{ mod } b$ has a unique solution. A ring with all non-zero elements having a multiplicative inverse is called a field.
 
