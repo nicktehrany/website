@@ -15,7 +15,7 @@ markup = "mmark"
 Hash functions are used for integrity protection (checksum, file system integrity), one way encryption (password protection), asymmetric crypto schemes, MACs, key derivations, pseudo random number generators, and many more applications.
 
 Hash functions receive an arbitrary length bit string and output a fixed length string called the hash value, digest, fingerprint, or hashcode.
-Hash functions are one way: easy to compute $y$ given $x$, where $y: H: \{0-1\}*\rightarrow\{0-1\}^n$
+Hash functions are one way: easy to compute $y$ given $x$, where $y: H: \\{0-1\\}*\rightarrow\\{0-1\\}^n$
 
 $$H(x)=y$$
 

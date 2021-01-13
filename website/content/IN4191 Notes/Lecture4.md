@@ -38,6 +38,8 @@ The discrete log problem (DLP) states that given a finite group $G$, and $g,h \i
 $$\displaylines{g^x=h
 \text{ or }x=dlog_g(h)}$$
 
+in other words $a^x=y\text{ mod }p$, given $a$ and $y$ it is difficult to find $x$.
+
 ### Defining Security (Chapter 11)
 
 Three aspects of modern cryptography:
