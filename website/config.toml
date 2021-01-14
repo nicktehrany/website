@@ -2,7 +2,7 @@ baseurl      = "https://nicktehrany.github.io"
 title        = "Nick Tehrany"
 languageCode = "en-us"
 theme        = "hello-friend-ng"
-paginate     = 10
+paginate     = 13
 
 [params]
   dateform        = "Jan 2, 2006"
