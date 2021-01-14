@@ -66,7 +66,11 @@ This scheme introduces data expansion as the message with the ciphertext will ha
 
 #### Pallier Encryption
 
-Based on the difficulty of factoring large integers. Key generation is done with $n=p*q$ and $g$ is a generator of the group $\mathbb{Z}_{N^2}^*$ with an order of $n$ that is $g^n\equiv 1\text{ mod } n^2$ and $\lambda =lcm(p-1,q-1)$ (least common multiplier), where the secret key is $\lambda$ and the public key is $(g,n)$.
+Based on the difficulty of factoring large integers. Key generation is done with $n=p*q$ and $g$ is a generator of the group
+
+$$\mathbb{Z}_{N^2}^*$$
+
+with an order of $n$ that is $g^n\equiv 1\text{ mod } n^2$ and $\lambda =lcm(p-1,q-1)$ (least common multiplier), where the secret key is $\lambda$ and the public key is $(g,n)$.
 
 Encryption is done as
 
@@ -169,3 +173,77 @@ Encapsulation and decapsulation are then given as
 This **is IND-CCA** secure if the hash function is secure.
 
 ### Secure Signature Schemes
+
+#### RSA-FDH
+
+RSA-Full Domain Hash is a combination of RSA and hash functions for an efficient and secure signature scheme. It works by taking the hash of the message and signing it with the private key and upon receiving the signature is verified by using the public key and the calculated hash of the message, and comparing the two hashes. This scheme is secure but the codomain of the hash function needs to match the domain of RSA.
+
+#### RSA-PSS
+
+RSA-Probabilistic Signature Scheme has $N$ as an RSA modulo of size $k$ bits with $e$ and $d$, and two parameters $k_0$ and $k_1$ such that $k_0+k_1<k-1$ with the following hash functions
+
+$$G: \\\{0,1\\\}^{k_1}\rightarrow \\\{0,1\\\}^{k-k_1-1}$$
+
+$$H: \\\{0,1\\\}^*\rightarrow \\\{0,1\\\}^{k_1}$$
+
+and
+
+$$G_1: \\\{0,1\\\}^{k_1}\rightarrow \\\{0,1\\\}^{k_0}$$
+
+$$G_2: \\\{0,1\\\}^{k_1}\rightarrow \\\{0,1\\\}^{k-k_0-1}$$
+
+$$G(w)=g_1(w)||G_2(w)$$
+
+![RSA-PSS](/images/IN4191/RSA-PSS.png)
+
+#### DSA
+
+Digital Signature Algorithm exists because
+
+- RSA based schemes are costly in terms of signature generation
+- RSA based signatures are large
+- RSA might be broken soon
+
+Digital signature algorithm is based on finite fields or elliptic curves
+
+It uses a large prime $p$ such that $p-1$ is divisible by another prime $q$, a generator $g$ of the finite field in mod $p$ with an order $q$, and a hash functiion that maps bit string to $\mathbb{Z}_p$
+
+The secret key will be an integer $x$ in $[0,...,q-1]$ and the public key as $h=g^x$.
+
+![DSA](/images/IN4191/DSA.png)
+
+#### EC-DSA
+
+Choose a random integer $a$ and a point $P$, where $a$ is the secret key, and compute the public key $Q=aP$
+
+![EC-DSA](/images/IN4191/EC-DSA.png)
+
+Smaller key size due to elliptic curves and no exponentiations but point operations on the elliptic curve.
+
+#### Schorr Signatures
+
+$G$ is a public abelian group with generator $g$ of prime order $q$ with private key $x$ in $[0,...,q-1]$ and public key $h=g^x$.
+
+Signing a message is done as
+
+$$k\leftarrow \mathbb{Z}_q$$
+
+$$r\leftarrow g^k$$
+
+$$e\leftarrow H(m||r)$$
+
+$$s\leftarrow k+x*e\text{ mod }q$$
+
+Verification is done as
+
+$$r\leftarrow g^s*h^{-e}$$
+
+The signature is only valid if and only if $e=H(m||r)$.
+
+#### Nyberg-Rueppel Signature
+
+If the message is small we can verify the signature and extract the message from it. This is a log based scheme with message recovery, but it requires redundancy (e.g. doubling the message by concatenating it twice $m||m$) which is easy to revert.
+
+$G$ is a public abelian group with generator $g$ of prime order $q$ and private key $x=[0,...,q-1]$ and public key $h=g^x$.
+
+![Nyber-Ruppel](/images/IN4191/Nyberg-Ruppel.png)
