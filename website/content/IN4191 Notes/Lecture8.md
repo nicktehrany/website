@@ -67,7 +67,9 @@ where
 
 $$N=\prod_{i=1}^np_i^{e_i}$$
 
-With this the totient function will tell us how many coprimes there are in the set of $\mathbb{Z}_N$ and we can then calculate all the coprimes in the set as $\mathbb{Z}_N^*=\\{1\le a < n | \text{ gcd}(a,n)=1\\}$
+With this the totient function will tell us how many coprimes there are in the set of $\mathbb{Z}_N$ and we can then calculate all the coprimes in the set as
+
+$$\mathbb{Z}_N^*=\\{1\le a < n | \text{ gcd}(a,n)=1\\}$$
 
 If $p$ is a prime, then $\phi(p)=p-1$.  
 If $p$ and $q$ are both prime, then $\phi(p*q)=(p-1)(q-1)$.

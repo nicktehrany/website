@@ -24,7 +24,7 @@ and $x$ is called the preimage.
 Need to have three properties:
 
 1. **Preimage Resistance:** given a hash value $y$, it should be infeasible to find $x$.
-2. **Second Preimage Resistance:** given a preimage $x$, it should be hard to find an $x'$ with the same hash such that $y=y'$. This is done by making the output space large enough (i.e. $2^128$), since $2^n$ attempts are required.
+2. **Second Preimage Resistance:** given a preimage $x$, it should be hard to find an $x'$ with the same hash such that $y=y'$. This is done by making the output space large enough (i.e. $2^{128}$), since $2^n$ attempts are required.
 3. **Collision Resistance:** given two preimages $x$ and $x'$ it should be infeasible to compute the same hash $y$. The difference to second preimage resistance is that here we are not looking for a single pair of preimages that give the same hash, but any pair (remember all your previous hash calculations).
 
 As there is guaranteed to exist an adversary that can break collision resistance, since we know a larger input domain will have to map multiple inputs to the same output if the output domain is fixed (pigenhole principle applies), but given human ignorance we can assume hash functions to be collision resistant. Human ignorance states that in the same domain the collision will likely be a meaningless preimage. For example trying to find the collision of a hashed contract will just be random bits.

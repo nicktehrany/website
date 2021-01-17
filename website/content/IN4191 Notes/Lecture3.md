@@ -10,9 +10,9 @@ mathjax = "true"
 markup = "mmark"
 +++
 
-#### Information Theoretic Security (Chapter 9)
+### Information Theoretic Security (Chapter 9)
 
-A crypto system is said to be _computationally secure_ if the beset possible algorithm for breaking it requires $$N$$ operations,
+A crypto system is said to be _computationally secure_ if the best possible algorithm for breaking it requires $$N$$ operations,
 where $$N$$ is some large number above $2^{128}$. It is impossible to prove that a system is computationally secure, as
 we do not know if there is a better algorithm for breaking it, hence a system is called secure if the best _known_ algorithm
 requires a large number of computations.
@@ -23,7 +23,7 @@ numbers).
 A system is said to be _unconditionally secure_ if the adversary has unlimited computational power but still cannot break
  the system.
 
- #### Probability and Ciphers
+#### Probability and Ciphers
 
  Given $\mathbb{P}$ the space of possible plaintexts, $\mathbb{K}$ the space of possible keys, and $\mathbb{C}$ the space of possible ciphertexts,
 the probability that $p(C=c)$ is given as,
@@ -59,7 +59,7 @@ p(C=2)=p(K=k_1)*p(P=c)+p(K=k_2)*(P=d)+p(K=k_3)*p(P=d)=0.2625\\
 p(C=3)=p(K=k_1)*p(P=a)+p(K=k_2)*(P=a)+p(K=k_3)*p(P=b)=0.2625\\
 p(C=4)=p(K=k_1)*p(P=b)+p(K=k_2)*(P=c)+p(K=k_3)*p(P=a)=0.2125}$$
 
-As can be seen all ciphertext are almost uniformly distributed. Based of this we can compute the conditional probability that c is the ciphertext given plaintext m with
+As can be seen ciphertexts are almost uniformly distributed. Based of this we can compute the conditional probability that c is the ciphertext given plaintext m with
 
 $$p(C=c|P=m)=\sum_{k:m=d_k(c)}p(K=k)$$
 
@@ -118,7 +118,7 @@ $$H(X,Y)=H(Y)+H(X|Y)$$
 
 The _key equivocation_ property is what uncertainty is left about the key after a ciphertext is revealed, and is stated as
 
-$$H(K,C)=H(K)+H(P)$$
+$$H(K,C)=H(K)+H(P)-H(C)$$
 
 #### Spurious Keys and Unicity Distance
 

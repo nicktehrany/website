@@ -10,9 +10,9 @@ mathjax = "true"
 markup = "mmark"
 +++
 
-#### Classical Systems (Chapter 7)
+### Classical Systems (Chapter 7)
 
-An encryption algoithm or ciper is the transformation of plaintext to ciphertext with a secret key, depicted as
+An encryption algorithm or cipher is the transformation of plaintext to ciphertext with a secret key, depicted as
 
 $$c=e_k(m)$$
 
@@ -31,14 +31,13 @@ Another form of system that uses different types of keys; public key for encrypt
 known as an _asymmetric cryptosystem_ or _public key cryptosystem_
 
 Historical ciphers can easily be broken with _Cryptanalysis_ based on the properties of the underlying language (english). The frequencies of
-most commonly appearing letters (E and T) will be visible in certain ciphers, or the most common bigrams (TH and HE), or
-or trigrams (THE and ING).
+most commonly appearing letters (E and T) will be visible in certain ciphers, or the most common bigrams (TH and HE), or trigrams (THE and ING).
 
 #### Kerckhoff's Principle
 
 "The method must not be required to be secret, and it must be able to fall into the hands of the enemy without inconvenience."
 
-##### Shift Cipher
+#### Shift Cipher
 
 One of the simplest ciphers is the shift cipher, which shifts the letters in the alphabet based on some key.
 Commonly called the Ceasar cipher, as he used this algorithm with a key of three. For example with 3 as a key, the
@@ -57,7 +56,7 @@ with random variables $X$ and $Y$, $V$ the support of $X$ and $Y$ (all values wh
 $Y$ with non-zero probability). After doing this calculation with all possible values for key $k$ the result will be
 26 different distributions. The one with the lowest is the one most likely to be the key.
 
-##### Substitution Cipher
+#### Substitution Cipher
 
 Problem with shift cipher is too small key space, substitution uses a permutation of the alphabet to substitute each letter
 with a letter from the permutation using a chosen permutation. Here the key space is equal to the number of possible
@@ -68,7 +67,7 @@ Feasibility of brute forcing is given as under $2^{80}$ steps.
 Substitution cipher can still be broken using statistical distance as with the shift cipher, and the details of the
 underlying language.
 
-##### Vigénere Cipher
+#### Vigénere Cipher
 
 Problem in the substitution cipher is that each plaintext letter always corresponds to the same ciphertext letter.
 A solution is to use a polyalphabetic substitution cipher, similar to the regular substitution cipher but with 2 different
@@ -79,12 +78,12 @@ information of the language. With 5 different alphabets, the key space becomes
 $$(26!)^5\approx2^{441}$$
 
 But it's hard to remember the key, hence there is the vigénere cipher. Where the key is a word, which is continuously repeated.
-The same problem arises that once the length of the key is known, the cipher can be broken using the Kasiki test to fist
-finding the length of the keyword by looking at the distances of commonly appearing bigrams and trigrams and finding their
-greatest common divisor (gcd). Then with the length of the keyword look at every first letter of the key length (ie. with key 5, letters 0,5,10...)
+The same problem arises that once the length of the key is known, the cipher can be broken using the Kasiki test to first
+find the length of the keyword by looking at the distances of commonly appearing bigrams and trigrams and finding their
+greatest common divisor (gcd). Then with the length of the keyword look at every first letter of the key length (i.e. with key 5, letters 0,5,10...)
 and use statistics to find the plaintext letter.
 
-##### Permutation Cipher
+#### Permutation Cipher
 
 Permuatation ciphers work by having a permuatation $\sigma \in S_n$, for example
 

@@ -14,20 +14,20 @@ markup = "mmark"
 
 Security means:
 
-**C**onfidentiality: Access to  systems or dataa is limited to authorised parties.  
-**I**ntegrity: WHen you receive data, you get the "right" data.  
+**C**onfidentiality: Access to  systems or data is limited to authorized parties.  
+**I**ntegrity: When you receive data, you get the "right" data.  
 **A**vailability: The system or data is there when you want it.  
 
 #### Objectives of Cryptography
 
     - Message authentication: valid message?
     - Data origin authentication: valid sender?
-    - Enitity authentication: authenticate each other for communication
+    - Entity authentication: authenticate each other for communication
 
 Kerkhoff's principle: The adversary knows all details about the crypto system except the private key.
 
 $Enc_k$: plaintext to ciphertext  
-$Dec_k$: ciphertext to plaitnext  
+$Dec_k$: ciphertext to plaintext  
 Encryption key: $k$  
 Decryption key: $k'$  
 

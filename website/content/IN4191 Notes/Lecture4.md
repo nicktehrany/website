@@ -10,13 +10,13 @@ mathjax = "true"
 markup = "mmark"
 +++
 
-### Security Games (Chapter 2.2)
+#### Security Games (Chapter 2.2)
 
 Security games are used to define security for cryptographic components, which contain an adversary and a challenger, and the idea is that the adversary needs to reach a certain objective given data provided by the challenger. These are typically represented visually with the adversary in a box and the challenger outside with the date it provides. The advantage of an adversary $$A$$ is defined as a function bounded by time $$t$$ that the adversary spends to try to solve the problem. For RSA and SQRROOT games this is defined as
 
 $$Adv_v^X(A,t)=Pr[A \text{ wins the game X for }v=log_2N \text{ in time less than }t]$$
 
-The quadratic residue of a value check all values that it comprises (i.e. with value 7, $\mathbb{Z}_7={0,1,2,3,4,5,6}$), and square each containing value (except 0 of course) module the value itself. For the example with $\mathbb{Z}=7$ this will be,
+Finding the quadratic residue of a value is done by checking all values that it comprises (i.e. with value 7, $\mathbb{Z}_7=\\\{0,1,2,3,4,5,6\\\}$), and squaring each containing value (except 0 of course) modulo the value itself. For the example with $\mathbb{Z}=7$ this will be,
 
 $$\displaylines{1^2\equiv1 \text{ mod }7\\
 2^2\equiv4 \text{ mod }7\\
@@ -25,18 +25,17 @@ $$\displaylines{1^2\equiv1 \text{ mod }7\\
 5^2\equiv4 \text{ mod }7\\
 6^2\equiv1 \text{ mod }7}$$
 
-Where the residue class is all remainders, in this case $Q_7={1,2,4}$.
+Where the residue class is all remainders, in this case $Q_7=\\\{1,2,4\\\}$.
 
 For the QUADRES game, where the challenger picks a value $$a$$ to be a quadratic residue and the adversary guesses if it is a quadratic residue or not (50/50 chance with random guessing). Hence, the advantage is zero if the adversary just guesses, which makes the function
 
 $$Adv_v^{QUADRES}(A)=2*\lvert Pr[A \text{ wins the QUADRES game for }v=log_2N]-\frac{1}{2}\lvert$$
 
-### Discrete Logarithms (Chapter 3.1)
+#### Discrete Logarithms (Chapter 3.1)
 
 The discrete log problem (DLP) states that given a finite group $G$, and $g,h \in G$
 
-$$\displaylines{g^x=h
-\text{ or }x=dlog_g(h)}$$
+$$g^x=h\text{ or }x=dlog_g(h)$$
 
 in other words $a^x=y\text{ mod }p$, given $a$ and $y$ it is difficult to find $x$.
 
