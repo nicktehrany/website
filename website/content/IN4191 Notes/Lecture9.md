@@ -12,15 +12,15 @@ markup = "mmark"
 
 ## The RSA Algorithm (Chapter 15)
 
-The RSA algorithm is based on the difficulty of the RSA problem that it is difficult to find the prime factors of large integers. It works by taking two large secret primer numbers $p$ and $q$ and computing $N=p*q$. Then picking an encryption exponent $e$ that satisfies
+The RSA algorithm is based on the difficulty of the RSA problem that it is difficult to to find $d$ given a large composite number $N$ and $e$. It works by taking two large secret prime numbers $p$ and $q$ and computing $N=p*q$. Then picking an encryption exponent $e$ that satisfies
 
 $$\text{gcd}(e,(p-1)*(q-1))=1$$
 
-It is common to chose values $e=3,17,65537$. Now the public key will be shared as the pair of $\mathfrak{pC}=(N,e)$. The private key is computed by applying the extended euclidean algorithm on $e$ and $(p-1)(q-1)$ to obtain the decryption exponent $d$ tha satisfies
+It is common to chose values $e=3,17,65537$. Now the public key will be shared as the pair of $\mathfrak{pC}=(N,e)$. The private key is computed by applying the extended euclidean algorithm on $e$ and $(p-1)(q-1)$ to obtain the decryption exponent $d$ that satisfies
 
-$$e*d=1(\text{ mod }(p-1)(q-1))$$
+$$e*d=1\text{ mod }(p-1)(q-1)$$
 
-The secret key can be kept as just $\mathfrak{sK}=(D)$ or $\mathfrak{sK}=(d,p,b)$
+The secret key can be kept as just $\mathfrak{sK}=(d)$ or $\mathfrak{sK}=(d,p,b)$
 
 **Encryption** can then simply be done by
 
@@ -64,7 +64,7 @@ followed by applying the Chinese Remainder Theorem to combine $m_p$ and $m_q$.
 
 ### The "Naive" RSA Signature
 
-Construct $d$ the same way as was done in RSA before, nad now senders sign a message by decrypting it and the receiver verifies the signature by encryption and obtains the message
+Construct $d$ the same way as was done in RSA before, now senders sign a message by decrypting it and the receiver verifies the signature by encryption and obtains the message
 
 $$\text{Signing: }s\leftarrow m^d\text{ mod }N$$
 
@@ -124,7 +124,7 @@ $$q=\frac{S-\sqrt{S^2-4*N}}{2}$$
 
 **Using a shared modulus** (using the same $p$ and $q$), the attacker can trivially calculate $d$. In the first case, bob and the attacker are sharing a modulus (and bob is index 2), the attacker can calculate $d$ using $e_2*d_2\equiv 1\text{ mod }\phi(N)$.
 
-In the second case, where the attacker knows that two parties use the same modulus, he gets two different ciphertexts from both parties for the same plaintext,
+In the second case, if the attacker can obtain two different ciphertexts for the same plaintext by both other parties, he can find the keys
 
 ![Shared Modulus](/images/IN4191/RSA-Shared-Modulus.png)
 
@@ -132,10 +132,10 @@ In the second case, where the attacker knows that two parties use the same modul
 
 ![Small exponent](/images/IN4191/RSA-Small_EXP.png)
 
-**Wiener's Attack** If one wants to speedup the performance of by choosing a smaller value for the private exponent $d$, this will lead to a large value of the encryption exponent $e$ and we cannot choose too small a value for $d$, otherwise an attacker could find $d$ using exhaustive search. But it turns out that $d$ needs to be at least the size of $\frac{1}{3}*N^{1/4}$, otherwise one could attack using Wiener's attack.
+**Wiener's Attack** If one wants to speedup the performance by choosing a smaller value for the private exponent $d$, this will lead to a large value of the encryption exponent $e$ and we cannot choose too small a value for $d$, otherwise an attacker could find $d$ using exhaustive search. But it turns out that $d$ needs to be at least the size of $\frac{1}{3}*N^{1/4}$, otherwise one could attack using Wiener's attack.
 
 The attack uses continued fractions to give a linear time algorithm to determine the private exponent when it is less than $\frac{1}{3}*N^{1/4}$.
 
 #### Fault Analysis
 
-By introducing faults into a system by tricking it into doing some calculation incorrectly, by for example altering the environment or heating or cooling the chip or by damaging the circuit in some way.
+Fault analysis is the introduction of faults into a system and tricking it into doing some calculation incorrectly, by for example altering the environment, heating or cooling the chip, or by damaging the circuit in some way.

@@ -84,7 +84,7 @@ Note that in the previous game with public crypto, it is also CPA as the adversa
 
 ![OW-CCA](/images/IN4191/OW-CCA.png)
 
-As this notion ony provides a sense of fully breaking the encryption but not retrieving parts of the message, there are additional security classifications about how secure a message should be, such that the adversary cannot retrieve any information about the plaintext.
+As this notion only provides a sense of fully breaking the encryption but not retrieving parts of the message, there are additional security classifications about how secure a message should be, such that the adversary cannot retrieve any information about the plaintext.
 
 - **Perfect Security:** As was seen in earlier chapters, perfect security is when the adversary cannot gain any information about the message, by using a key with the same length as the plaintext. This is not used in practice as it is highly unpractical.
 - **Semantic Security:** Similar to perfect security but the run time of the adversary is bounded by a polynomial function of the underlying security parameter (i.e. the key size).
@@ -96,8 +96,8 @@ As this notion ony provides a sense of fully breaking the encryption but not ret
 
 Any encryption function that is IND-CPA secure must be probabilistic.
 
-Definition: A crypto algorithm is secure if it is semantically secure against a CPA attack.
-Definition: An encryption algorithm is secure if it is IND-CCA secure.
+Definition: A crypto algorithm is secure if it is semantically secure against a CPA attack.  
+Definition: An encryption algorithm is secure if it is IND-CCA secure.  
 Theorem: A system that is IND-PASS secure must be semantically secure against passive adversaries.
 
 $$\displaylines{\prod \text{ is IND-CCA} \Longrightarrow\prod \text{ is IND-CPA}\Longrightarrow\prod\text{ is IND-PASS}\\ \prod \text{ is IND-XXX}\Longrightarrow\prod\text{ is OW-XXX}}$$

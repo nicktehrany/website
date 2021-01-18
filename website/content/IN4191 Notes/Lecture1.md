@@ -24,7 +24,7 @@ Security means:
     - Data origin authentication: valid sender?
     - Entity authentication: authenticate each other for communication
 
-Kerkhoff's principle: The adversary knows all details about the crypto system except the private key.
+Kerckhoff's principle: The adversary knows all details about the crypto system except the private key.
 
 $Enc_k$: plaintext to ciphertext  
 $Dec_k$: ciphertext to plaintext  

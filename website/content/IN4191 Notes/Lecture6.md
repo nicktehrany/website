@@ -15,9 +15,13 @@ markup = "mmark"
 Block ciphers operate on blocks of plaintext at a time to produce blocks of plaintext. Block sizes tend to be large, 64 bits in DES and 128 bits in other modern block ciphers. In order to limit the advantage of the adversary, the key space is kept very large such that $Adv_{\{F_k\}K}^{PRP}(A)\approx 1/|K|$.
 Block cipher is part of an encryption but requires a mode of operation, these are both developed independently.
 
-DES (Data Encryption Standard) was a _iterated_ block cipher which uses a _round function_ repeatedly. DES was deemed unsafe in the 90s but other variants (3DES, shown below) are still being used. Another such cipher is AES (Advanced Encryption Standard). The round function takes a block and returns a block of the same size, and the number of rounds can be fixed or varied. Each use of the round function uses a round key derived from the main secret key using an algorithm called _key scheduling_. The round function should be invertible for decryption and using round keys in reverse order.
+DES (Data Encryption Standard) was an _iterated_ block cipher which uses a _round function_ repeatedly. DES was deemed unsafe in the 90s but other variants (3DES, shown below) are still being used. Another such cipher is AES (Advanced Encryption Standard). The round function takes a block and returns a block of the same size, and the number of rounds can be fixed or varied. Each use of the round function uses a round key derived from the main secret key using an algorithm called _key scheduling_. The round function should be invertible for decryption and using round keys in reverse order.
 
 ![3DES](/images/IN4191/3DES.png)
+
+In DES the round is invertible but not the round function.
+
+In AES both the round and the round function are invertible.
 
 Techniques (+Luck) for breaking block ciphers:
 
@@ -29,7 +33,7 @@ Shannon's confusion-diffusion paradigm
 - **Confusion:** Split the block into smaller blocks and apply a permutation on each block
 - **Diffusion:** Mix permutations so that local change can effect the whole block
 
-Substitution-permutation implements Shannon's paradigm directly by mixing keys, substituting, and permutation.
+**Substitution-permutation networks** are a direct implementation of Shannon's paradigm by mixing keys, substituting, and permutation.
 
 _Avalanche effect_ states that a single change in the plaintext must affect every bit of the output, to not find correlations between input bits and output bits. In order to have avalanche effect there need to be at least 7 rounds.
 
@@ -55,7 +59,7 @@ Security of Feistel ciphers depends on:
 
 #### DES (Data Encryption Standard)
 
-A Feistel cipher with **16 rounds**, **64 bits block size**, **56 bit key length**, and **16 round keys, each 48 bits**. It performs an initial permutation (IP), then run the Feistel cipher, and then perform a reverse permutation ($IP^{-1}$).
+A Feistel cipher with **16 rounds**, **64 bits block size**, **56 bit key length**, and **16 round keys, each 48 bits**. It performs an initial permutation (IP), then runs the Feistel cipher, and then perform a reverse permutation ($IP^{-1}$).
 
 ![DES](/images/IN4191/DES.png)
 
@@ -66,24 +70,24 @@ The stages of the $F$ function are:
 1. **Expansion permutation** where the right half of the 32 bits is expanded and permuted to 48 bits.
 2. **Round key addition** where the 48 bit input is xored with the round key
 3. **Splitting** the resulting 48 bits are split into eight lots of 6 bit values.
-4. **S-Boxes** each 6 bit value goes into an s-box and produces a b4 bit output. S-boxes present the non-linear component, as they are lookup tables that are 4x16 in size.
+4. **S-Boxes** each 6 bit value goes into an s-box and produces a 4 bit output. S-boxes present the non-linear component, as they are lookup tables that are 4x16 in size.
 5. **P-Box** the eight 4 bit lots are combined into 32 bits and are permuted.
 
-DES key scheduling takes the 56 bit key (it's 64 bits but 8 bits are parity bits for error detection at every 8th bit, so 8 16 ... 64) and permute the bits with the PC-1 permutation. The output of the permutation is divided into two 28 bit halfs $C_0$ the left half and $D_0$ the right. Each round we compute
+DES key scheduling takes the 56 bit key (it's 64 bits but 8 bits are parity bits for error detection at every 8th bit, so 8 16 ... 64) and permutes the bits with the PC-1 permutation. The output of the permutation is divided into two 28 bit halfs $C_0$ the left half and $D_0$ the right. Each round we compute
 
 $$C_i\leftarrow C_{i-1}\lll p_i,$$
 
 $$D_i\leftarrow D_{i-1}\lll p_i$$
 
-where $x \lll p_i$ means performing a cyclic shift on $x$ to the left bu $p_i$ positions. If the round number is 1,2,9,16 we shift left by one position, otherwise by two. The two halfs $C_0$ and $D_0$ are joined back together and are permuted again with the PC-2 permutation. Visually depicted below
+where $x \lll p_i$ means performing a cyclic shift on $x$ to the left by $p_i$ positions. If the round number is 1,2,9,16 we shift left by one position, otherwise by two. The two halfs $C_0$ and $D_0$ are joined back together and are permuted again with the PC-2 permutation. Visually depicted below
 
 ![DES Key Scheduling](/images/IN4191/DES_key_sched.png)
 
-Decryption is identical ony keys will be used in reverse order.
+Decryption is identical only keys will be used in reverse order.
 
 #### AES (Advanced Encryption Standard)
 
-AES is not a Feistel cipher but still has around function. It is built on the mathematical foundation of finite fields (Galois fields). Galois field are represented as $GF(p^m)$ with $p$ a prime number and $m$ an integer. Fields with value $m=1$ are prime fields and fields with $m\ge2$ are extension fields. Extension fields work with polynomials (have operations of addition, subtraction, multiplication, and non-negative exponentiation). Operations in the fields are in mod $p$ such that
+AES is not a Feistel cipher but still has a round function. It is built on the mathematical foundation of finite fields (Galois fields). Galois field are represented as $GF(p^m)$ with $p$ a prime number and $m$ an integer. Fields with value $m=1$ are prime fields and fields with $m\ge2$ are extension fields. Extension fields work with polynomials (have operations of addition, subtraction, multiplication, and non-negative exponentiation). Operations in the fields are in mod $p$ such that
 
 $$a+b\equiv c \text{ mod } p$$
 
@@ -95,7 +99,7 @@ and inverses are given as
 
 $$a*a^{-1}\equiv 1 \text{ mod }p$$
 
-where for all variables come from the range of values in the set (e.g. $\mathbb{Z}_7=\\{0,1,2,3,4,5,6\\}$). Extension fields are for represented in $m-1$ degree, for example with $GF(2^3)=GF(8)$ and is represented as
+where all variables come from the range of values in the set (e.g. $\mathbb{Z}_7=\\{0,1,2,3,4,5,6\\}$). Extension fields are represented in $m-1$ degree, for example with $GF(2^3)=GF(8)$ and is represented as
 
 $$A(x)=a_2x^2+a_1x^1+a_0$$
 
@@ -135,7 +139,7 @@ AES Operations:
 
    ![AES MixColumns](/images/IN4191/AES_MixColumns.png)
 
-- **AddRoundKey:** the state matrix is exclusive xored with ($\oplus$) with the round key.
+- **AddRoundKey:** the state matrix is xored with ($\oplus$) with the round key.
 
 AES can then be described with the following algorithms for encryption and decryption respectively
 
@@ -159,17 +163,17 @@ There are many different operations but these are the 5 mainly used ones:
 
    The problems with this mode are that the same input block will result in the same output block (repetitions in english text), deletion is possible without detection, and replay attack is possible (insert blocks from other messages). This means it is **not IND-PASS** secure and **not OW-CCA** secure but **is OW-CPA** secure.
 
-- **Cipher Block Chaining (CBC):** encrypt the message with by xoring the ciphertext after encryption with the ciphertext of the previous message (IV for the first message).
+- **Cipher Block Chaining (CBC):** encrypt the message by xoring the ciphertext after encryption with the ciphertext of the previous message (IV for the first message).
 
-   ![CBC Operations](/images/IN4191/CBC.png)]
+   ![CBC Operations](/images/IN4191/CBC.png)
 
    The problem with this mode is that it is sequential and cannot be parallelized, and single bit errors cause the whole block to be decrypted wrong and a single wrong bit in the next block. If IV is used once and never repeated it **is IND-PASS** secure, if IV is fixed it is deterministic and hence only **IND-PASS secure** and **not CPA** secure. A truly random IV **is IND-CPA** secure.
 
-- **Output Feedback Mode (OFB):** a block cipher that can baea uses as stream cipher.
+- **Output Feedback Mode (OFB):** a block cipher that can be used as stream cipher.
 
    ![OFB Operations](/images/IN4191/OFB.png)
 
-   with a fixed IV its is **not IND-CPA** secure and **not OW-CPA** secure. With a nonce it **is IND-CPA** secure.
+   with a fixed IV it is **not IND-CPA** secure and **not OW-CPA** secure. With a nonce it **is IND-CPA** secure.
 
 - **Cipher Feedback Mode (CFB):** also a block cipher that can be used a stream cipher, but here the keystream output is generated by encrypting the ciphertext.
 
@@ -195,9 +199,9 @@ All previous modes of operations are not CCA secure (the decryption oracle would
 
 - **Encrypt then MAC:** append a message authentication code to the ciphertext. This is done by
 
-![MAC](/images/IN4191/MAC.png)
+   ![MAC](/images/IN4191/MAC.png)
 
-and the message authentication code is applied to the ciphertext. This **is IND-CCA secure**.
+   and the message authentication code is applied to the ciphertext. This **is IND-CCA secure**.
 
 - **Encrypt and MAC:** works in a similar way except the encryption is done on the ciphertext (not the plaintext). This is **not IND-CPA** secure.
 

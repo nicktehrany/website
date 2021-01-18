@@ -39,7 +39,7 @@ $$G(X)=X^L*C(1/X)$$
 - If $C_L=0$ the polynomial is singular (not choosing the last register for connection polynomial).
 - If $C_L=1$ the polynomial is non-singular and there is a period (including the last register in the connection polynomial).
   - $C(X)$ is irreducible: and the period is the smallest $N$ such that $C(X)$ divides $1+X^N$
-  - $C(X)$ is primitive Every initial state produces an output sequence that is periodic and of exact period $2^L-1$
+  - $C(X)$ is primitive: Every initial state produces an output sequence that is periodic and of exact period $2^L-1$
 
 If $$N$$ is the period, then the characteristic f(x) is a factor of $1-X^N$. For example a shift register with 3 registers has a maximum sequence of $2^N -1=2^3 -1=7$, then the connection polynomial with maximum sequence is a factor of $1+X^7$ such that one of the factors from which we can build the connection polynomial with $C(X)=X^3+X+1$.
 

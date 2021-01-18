@@ -41,14 +41,17 @@ Group types:
 
 Rings:
 
-A ring has two operations (+,\*) with properties 1 to 9, and is denotes a s(R,+,\*). If multiplication is commutative (property 10), then the ring is commutative.
+A ring has two operations (+,\*) with properties 1 to 9, and is denotes as (R,+,\*). If multiplication is commutative (property 10), then the ring is commutative.
 
 #### Euler's Totient Function
 
+Euler's totient function counts how many coprimes there  are for a given in its set $\mathbb{Z}_N$.
 For equations $a*x=b\text{ mod }N$ finding the solution,
 
 $$7*x=3\text{ mod } 143\text{ has one solution}$$
+
 $$11*x=3\text{ mod } 143\text{ has no solution}$$
+
 $$7*x=22\text{ mod } 143\text{ has 11 solution}$$
 
 finding the number of solutions is done by computing the gcd of $a$ and $N$ and has the cases:
@@ -69,10 +72,12 @@ $$N=\prod_{i=1}^np_i^{e_i}$$
 
 With this the totient function will tell us how many coprimes there are in the set of $\mathbb{Z}_N$ and we can then calculate all the coprimes in the set as
 
-$$\mathbb{Z}_N^*=\\{1\le a < n | \text{ gcd}(a,n)=1\\}$$
+$$\mathbb{Z}_N^*=\\\{1\le a < n | \text{ gcd}(a,n)=1\\\}$$
 
 If $p$ is a prime, then $\phi(p)=p-1$.  
 If $p$ and $q$ are both prime, then $\phi(p*q)=(p-1)(q-1)$.
+
+For example $\phi(15)$ is not prime but using $N=p*q$, $15=3*5$, we can calculate $\phi(15)=(3-1)(5-1)=8$.
 
 #### Multiplicative Inverse Modulo
 
@@ -80,7 +85,7 @@ Finding a $c$ such that
 
 $$a*c=c*a=1\text{ mod } N$$
 
-such a $c$ is called the multiplicative inverse modulo $N$ of $a$: $a^{-1}$. Such a $c$ only exists when $a$ and the module $N$ are coprime.
+such a $c$ is called the multiplicative inverse modulo $N$ of $a$: $a^{-1}$, and only exists when $a$ and the module $N$ are coprime, $gcd(a,N=1)$.
 
 If $p$ is a prime, then all non-zero elements have a multiplicative inverse in $\mathbb{Z}_N$, thus $a*x=b \text{ mod } b$ has a unique solution. A ring with all non-zero elements having a multiplicative inverse is called a field.
 
@@ -105,7 +110,7 @@ We can reduce with $\text{gcd}(a,b)=\text{gcd}(a\text{ mod } b,b)$ until we reac
 
 **Extended Euclidean Algorithm** states that any number $\text{gcd}(a,b)=r$ can be written in the form of $ax+by=r$, hence for a $\text{gcd}(a,N)=d$ where $d=1$ we can compute $ax+yN=1$, where $x$ is the multiplicative inverse of $a$ in modulo $N$.
 
-**Chinese Remainder Theorem** states that if we have two equations $x=a\text{ mod } N\text{ and }x=b\text{ mod }M$ then there is a unique solution module $M*N$ if and only if $\text{gcd}(N,M)=1$, and is given as
+**Chinese Remainder Theorem** states that if we have two equations $x=a\text{ mod } N\text{ and }x=b\text{ mod }M$ then there is a unique solution modulo $M*N$ if and only if $\text{gcd}(N,M)=1$, and is given as
 
 $$x\leftarrow \sum_{i=1}^ra_i*M_i*y_i\text{ mod } M$$
 
@@ -115,7 +120,7 @@ $$M_i\leftarrow M/m_i \text{ and } y_i\leftarrow M_i^{-1} \text{ mod }m_i$$
 
 #### Legendre Symbol
 
-Used to make it easier to detect squares modulo a prime $p$. The set of squares in $\mathbb{F}_P^*$ is called the _quadratic residue_ and is of the size $(p-1)/2$, all elements not in the quadratic residue are called _non-quadratic residue_. Legendre symbols are defines as 
+Used to make it easier to detect squares modulo a prime $p$. The set of squares in $\mathbb{F}_P^*$ is called the _quadratic residue_ and is of the size $(p-1)/2$, all elements not in the quadratic residue are called _non-quadratic residue_. Legendre symbols are defines as
 
 $$(\frac{a}{p})=a^{(p-1)/2}\text{ mod }p$$
 
@@ -143,7 +148,9 @@ Legendre symbols are defined if the denominator is prime, but for composite deno
 
 $$(\frac{a}{n})=(\frac{a}{p_1})^{e_1}(\frac{a}{p_2})^{e_2}...(\frac{a}{p_k})^{e_k}$$
 
-where $n=p_1^{e_1}*p_2^{e_2}...p_k^{e_k}$
+where
+
+$$n=p_1^{e_1}*p_2^{e_2}...p_k^{e_k}$$
 
 If $a$ is a square, the jacobi symbol will be 1, however if the jacobi symbol is 1, $a$ might not be a square.
 
@@ -153,7 +160,7 @@ It states that using Euler's totient function
 
 $$a^{\phi(n)}=1\text{ mod }n$$
 
-If $n$ is a prime this equality holds, however if this equality hols not necessarily is $n$ a prime. Fermat's test then check is a number is prime with a certain probability
+If $n$ is a prime this equality holds, however if this equality holds not necessarily is $n$ a prime.
 
 ![Fermat's Test](/images/IN4191/Fermats-test.png)
 
@@ -177,13 +184,17 @@ with requirements:
 
 ![Point Addition](/images/IN4191/EC-Point-Addition.png)
 
-The zero point is given as $F:y^2=x^3+ax+b\text{ mod }p$ and
+The zero point is given for
+
+$$F:y^2=x^3+ax+b\text{ mod }p$$
+
+with the following properties
 
 - $P+(-P)=0$
 - $Q+(-Q)=0$
 - $P+0=0+P=P$
 
-Total number of points on the curve will be $p$ (whatever modulo there is) and the zero point will be the last point ($P,1P,2P,...,NP)$ where $NP$ will be the identity element after which elements will start repeating (e.g. in $\text{mod }11$ point $12P$ is the same $P$)
+Total number of points on the curve will be $p$ (whatever modulo there is) and the zero point will be the last point $NP$ out of all points $P,1P,2P,...,NP)$. It is also called the identity element, and after it elements will start repeating (e.g. in $\text{mod }11$ point $12P$ is the same $P$)
 
 #### Addition Rules
 
@@ -204,4 +215,6 @@ We are adding two points $P=(x_1,y_1)$ and $Q=(x_2,y_2)$, then re result is $R=(
 
 #### Elliptic Curve Discrete Log Problem
 
-The problem states that for a positive integer $m$ and a point $P$, it is easy to compute $Q=mP$, but given $Q$ and $P$ it is difficult to compute $m$. For elliptic curves the message $m$ can be smaller (e.g. 128 bits) to make it infeasible, as opposed to making the calculation infeasible without elliptic curves shall be large (e.g. 1024 bits). Equivalently hard problems but much smaller values, hence brining much better performance.
+The problem states that for a positive integer $m$ and a point $P$, it is easy to compute $Q=mP$, but given $Q$ and $P$ it is difficult to compute $m$.
+
+For elliptic curves the prime number $p$ can be smaller (e.g. 128 bits) to make it infeasible, as opposed to making the calculation infeasible for DLP based systems (e.g. primer number $\ge1024$ bits). Equivalently hard problems but much smaller values, hence brining much better performance.
