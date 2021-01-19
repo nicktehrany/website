@@ -1,8 +1,8 @@
 +++
-date = "2021-01-15"
+date = "2021-01-16"
 description = "IN4191 Security and Cryptography Notes"
 linktitle = ""
-publisdate = "2021-01-15"
+publisdate = "2021-01-16"
 title = "Lecture 12: Secret Sharing"
 slug = "Lecture 12"
 type = "notes"

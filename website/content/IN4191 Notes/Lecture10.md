@@ -38,7 +38,7 @@ It is **not IND-CCA** secure since the system is homomorphic, meaning an operati
 
 #### ElGamal Encryption
 
-It uses a prime number $p$ such that $p-1$ is divisible by another prime number $q$., and element $g$ is an element in the finite field $p$ with an order $q$.
+It uses a prime number $p$ such that $p-1$ is divisible by another prime number $q$, and element $g$ is an element in the finite field $p$ with an order $q$.
 
 Key generation is done as secret key is $x\leftarrow [0,...,q-1]$ and public key is $h\leftarrow g^x\text{ mod }p$.
 
@@ -50,7 +50,7 @@ ciphertext
 
 $$c_1\leftarrow g^k$$
 
-$$c_2=m*h^k$$
+$$c_2\leftarrow m*h^k$$
 
 and output ciphertext
 
@@ -62,7 +62,15 @@ $$\frac{c_2}{c_1\text{}^x}=\frac{m*h^k}{g^{x*k}}=\frac{m*g^{x*k}}{g^{x*k}}=m$$
 
 It **is IND-CPA** secure but **not IND-CCA** secure due to multiplicative homomorphism.
 
-This scheme introduces data expansion as the message with the ciphertext will have to pieces.
+This scheme introduces data expansion as the message with the ciphertext will have two pieces.
+
+#### Carmichael Theorem
+
+Let $n=pq$ where $p$ and $q$ are large numbers, $\phi(n)$ is Euler'a totient function and $\lambda(n)=lcm(p-1,q-1$. For any $w\in \mathbb{Z}_{n^2}^*$,
+
+$$w^\lambda=1\text{ mod }n$$
+
+$$w^{n\lambda}=1\text{ mod }n^2$$
 
 #### Pallier Encryption
 
@@ -90,7 +98,7 @@ It is probabilistic, hence it **is IND-CPA** secure, **not IND-CCA** secure sinc
 
 ![OAEP](/images/IN4191/OAEP.png)
 
-Function $f$ is any $k$-bit trapdoor one way permutation, $k_0$ and $k_1$ are numbers such that the effort of $2^{k_0}$ and $2^{k_1}$ is impossible ($k_0,k_1>128$ bits). $n=k-K-0-k_1$ and the hash functions
+Function $f$ is any $k$-bit trapdoor one way permutation, $k_0$ and $k_1$ are numbers such that the effort of $2^{k_0}$ and $2^{k_1}$ is impossible ($k_0,k_1>128$ bits). $n=k-k_0-k_1$ and the hash functions
 
 $$G:\\\{0,1\\\}^{k_0}\rightarrow \\\{0,1\\\}^{n+k_1}$$
 
@@ -164,7 +172,7 @@ RSA-KEM **is IND-CCA** secure under ROM (Random Oracle Mode).
 
 #### DHIES-KEM
 
-Diffie-Hellman Integrated Encryption Scheme uses a cyclic finite abelian group $G$ of prime order $p$ for key generation, as well as a key generator $g$, Key space $K$, key derivation function $H$, generate $x$ in $\mathbb{Z}_N$, and compute $h=g^x$.
+Diffie-Hellman Integrated Encryption Scheme uses a cyclic finite abelian group $G$ of prime order $q$ for key generation, as well as a key generator $g$, Key space $K$, key derivation function $H$, generate $x$ in $\mathbb{Z}_N$, and compute $h=g^x$.
 
 Encapsulation and decapsulation are then given as
 
@@ -180,7 +188,7 @@ RSA-Full Domain Hash is a combination of RSA and hash functions for an efficient
 
 #### RSA-PSS
 
-RSA-Probabilistic Signature Scheme has $N$ as an RSA modulo of size $k$ bits with $e$ and $d$, and two parameters $k_0$ and $k_1$ such that $k_0+k_1<k-1$ with the following hash functions
+RSA-Probabilistic Signature Scheme has $N$ as a RSA modulo of size $k$ bits with $e$ and $d$, and two parameters $k_0$ and $k_1$ such that $k_0+k_1<k-1$ with the following hash functions
 
 $$G: \\\{0,1\\\}^{k_1}\rightarrow \\\{0,1\\\}^{k-k_1-1}$$
 
@@ -204,9 +212,9 @@ Digital Signature Algorithm exists because
 - RSA based signatures are large
 - RSA might be broken soon
 
-Digital signature algorithm is based on finite fields or elliptic curves
+Digital signature algorithm is based on finite fields or elliptic curves.
 
-It uses a large prime $p$ such that $p-1$ is divisible by another prime $q$, a generator $g$ of the finite field in mod $p$ with an order $q$, and a hash functiion that maps bit string to $\mathbb{Z}_p$
+It uses a large prime $p$ such that $p-1$ is divisible by another prime $q$, a generator $g$ of the finite field in mod $p$ with an order $q$, and a hash function that maps bit strings to $\mathbb{Z}_p$.
 
 The secret key will be an integer $x$ in $[0,...,q-1]$ and the public key as $h=g^x$.
 
@@ -214,7 +222,7 @@ The secret key will be an integer $x$ in $[0,...,q-1]$ and the public key as $h=
 
 #### EC-DSA
 
-Choose a random integer $a$ and a point $P$, where $a$ is the secret key, and compute the public key $Q=aP$
+Elliptic curve version of DSA, choose a random integer $a$ and a point $P$, where $a$ is the secret key, and compute the public key $Q=aP$
 
 ![EC-DSA](/images/IN4191/EC-DSA.png)
 

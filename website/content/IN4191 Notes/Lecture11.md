@@ -1,8 +1,8 @@
 +++
-date = "2021-01-14"
+date = "2021-01-15"
 description = "IN4191 Security and Cryptography Notes"
 linktitle = ""
-publisdate = "2021-01-14"
+publisdate = "2021-01-15"
 title = "Lecture 11: Certificates, Key Transport, and Key Agreement"
 slug = "Lecture 11"
 type = "notes"
@@ -86,7 +86,7 @@ Alice sends the symmetric key to Bob by encrypting it with Bob's public key.
 
 #### Diffie-Hellman Key Exchange Protocol
 
-It enables tow entities to establish a symmetric key even though they have never met before, based on the discrete log problem, and works with a finite field version on abelian group $G$ of order $q$, and an elliptic curve version.
+It enables two entities to establish a symmetric key even though they have never met before, based on the discrete log problem, and works with a finite field version on abelian group $G$ of order $q$, and an elliptic curve version.
 
 ![Diffie-Hellman Key Exchange](/images/IN4191/Diffie-Hellman-Key-Exchange.png)
 
@@ -94,7 +94,7 @@ Has the problem of man in the middle attacks.
 
 ![Signed Diffie-Hellman Key Exchange](/images/IN4191/Signed-Diffie-Hellman.png)
 
-Signed is still not secure as the attacker can change the signature. The randomness is $g^a$ or $g^b$ is not linked with the ID of the sender.
+Signed is still not secure as the attacker can change the signature. The randomness of $g^a$ or $g^b$ is not linked with the ID of the sender.
 
 #### Station-to-Station (STS) Protocol
 
