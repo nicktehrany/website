@@ -77,7 +77,15 @@ $$\mathbb{Z}_N^*=\\\{1\le a < n | \text{ gcd}(a,n)=1\\\}$$
 If $p$ is a prime, then $\phi(p)=p-1$.  
 If $p$ and $q$ are both prime, then $\phi(p*q)=(p-1)(q-1)$.
 
-For example $\phi(15)$ is not prime but using $N=p*q$, $15=3*5$, we can calculate $\phi(15)=(3-1)(5-1)=8$.
+For example $\phi(15)$ is not prime but using
+
+$$N=p*q$$
+
+$$15=3*5$$
+
+we can calculate
+
+$$\phi(15)=(3-1)(5-1)=8$$.
 
 #### Multiplicative Inverse Modulo
 
@@ -194,7 +202,7 @@ with the following properties
 - $Q+(-Q)=0$
 - $P+0=0+P=P$
 
-Total number of points on the curve will be $p$ (whatever modulo there is) and the zero point will be the last point $NP$ out of all points $P,1P,2P,...,NP)$. It is also called the identity element, and after it elements will start repeating (e.g. in $\text{mod }11$ point $12P$ is the same $P$)
+Total number of points on the curve will be $p$ (whatever modulo there is) and the zero point will be the last point $NP$ out of all points ($P,1P,2P,...,NP)$. It is also called the identity element, and after it elements will start repeating (e.g. in $\text{mod }11$ point $12P$ is the same $P$)
 
 #### Addition Rules
 

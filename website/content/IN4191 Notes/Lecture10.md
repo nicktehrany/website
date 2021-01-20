@@ -66,7 +66,9 @@ This scheme introduces data expansion as the message with the ciphertext will ha
 
 #### Carmichael Theorem
 
-Let $n=pq$ where $p$ and $q$ are large numbers, $\phi(n)$ is Euler'a totient function and $\lambda(n)=lcm(p-1,q-1$. For any $w\in \mathbb{Z}_{n^2}^*$,
+Let $n=pq$ where $p$ and $q$ are large numbers, $\phi(n)$ is Euler'a totient function and $\lambda(n)=lcm(p-1,q-1)$. For any
+
+$$w\in \mathbb{Z}_{n^2}^*$$
 
 $$w^\lambda=1\text{ mod }n$$
 

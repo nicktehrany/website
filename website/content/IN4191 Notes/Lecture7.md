@@ -83,7 +83,7 @@ Due to birthdaying, the collision space to find a collision in MD-4 becomes $2^{
 
 #### Birthdaying Paradox
 
-Given a set of $t\text{ } (\ge 10)$ elements, take a sample of size $k$ (drawn with repetition) in oder to get probability $\ge 1/2$ on a collision (i.e. an element drawn at least twice). $k$ has to be $\ge 1.2 \sqrt{t}$
+Given a set of $t$ $(\ge 10)$ elements, take a sample of size $k$ (drawn with repetition) in oder to get probability $\ge 1/2$ on a collision (i.e. an element drawn at least twice). $k$ has to be $\ge 1.2 \sqrt{t}$
 
 Therefore if $F:A\rightarrow B$ (function $F$ is a mapping from $A$ to $B$) is a random function and $\text{sizeof }A>>\text{sizeof }B$ (size of $A$ is huge compared to $B$) then one can expect a collision after about $\sqrt{(\text{sizeof }B)}$ random function calls.
 

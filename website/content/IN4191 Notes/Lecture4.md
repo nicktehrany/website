@@ -75,16 +75,12 @@ Different types of attacks:
 
 - **CPA:** Chosen plaintext attack where the adversary also has access to an oracle for encrypting a chosen plaintext. This is done as with PASS, the adversary has very limited power.
 E.g. in symmetric crypto this would be as follows,
-
-![OW-CPA](/images/IN4191/OW_CPA.png)
-
-Note that in the previous game with public crypto, it is also CPA as the adversary has the public key and can encrypt whatever plaintext he chooses.
+   ![OW-CPA](/images/IN4191/OW_CPA.png)
+   Note that in the previous game with public crypto, it is also CPA as the adversary has the public key and can encrypt whatever plaintext he chooses.
 
 - **CCA:** Chosen ciphertext attack gives the adversary an oracle to decrypt chosen ciphertexts, except of course decrypting the original ciphertext. This game looks as follows for symmetric and public crypto,
-
-![OW-CCA](/images/IN4191/OW-CCA.png)
-
-As this notion only provides a sense of fully breaking the encryption but not retrieving parts of the message, there are additional security classifications about how secure a message should be, such that the adversary cannot retrieve any information about the plaintext.
+   ![OW-CCA](/images/IN4191/OW-CCA.png)
+   As this notion only provides a sense of fully breaking the encryption but not retrieving parts of the message, there are additional security classifications about how secure a message should be, such that the adversary cannot retrieve any information about the plaintext.
 
 - **Perfect Security:** As was seen in earlier chapters, perfect security is when the adversary cannot gain any information about the message, by using a key with the same length as the plaintext. This is not used in practice as it is highly unpractical.
 - **Semantic Security:** Similar to perfect security but the run time of the adversary is bounded by a polynomial function of the underlying security parameter (i.e. the key size).

@@ -12,7 +12,7 @@ markup = "mmark"
 
 #### Block Ciphers and Modes of Operation (Chapter 13)
 
-Block ciphers operate on blocks of plaintext at a time to produce blocks of plaintext. Block sizes tend to be large, 64 bits in DES and 128 bits in other modern block ciphers. In order to limit the advantage of the adversary, the key space is kept very large such that $Adv_{\{F_k\}K}^{PRP}(A)\approx 1/|K|$.
+Block ciphers operate on blocks of plaintext at a time to produce blocks of ciphertext. Block sizes tend to be large, 64 bits in DES and 128 bits in other modern block ciphers. In order to limit the advantage of the adversary, the key space is kept very large such that $Adv_{\{F_k\}K}^{PRP}(A)\approx 1/|K|$.
 Block cipher is part of an encryption but requires a mode of operation, these are both developed independently.
 
 DES (Data Encryption Standard) was an _iterated_ block cipher which uses a _round function_ repeatedly. DES was deemed unsafe in the 90s but other variants (3DES, shown below) are still being used. Another such cipher is AES (Advanced Encryption Standard). The round function takes a block and returns a block of the same size, and the number of rounds can be fixed or varied. Each use of the round function uses a round key derived from the main secret key using an algorithm called _key scheduling_. The round function should be invertible for decryption and using round keys in reverse order.
@@ -87,7 +87,7 @@ Decryption is identical only keys will be used in reverse order.
 
 #### AES (Advanced Encryption Standard)
 
-AES is not a Feistel cipher but still has a round function. It is built on the mathematical foundation of finite fields (Galois fields). Galois field are represented as $GF(p^m)$ with $p$ a prime number and $m$ an integer. Fields with value $m=1$ are prime fields and fields with $m\ge2$ are extension fields. Extension fields work with polynomials (have operations of addition, subtraction, multiplication, and non-negative exponentiation). Operations in the fields are in mod $p$ such that
+AES is not a Feistel cipher but still has a round function. It is built on the mathematical foundation of finite fields (Galois fields). Galois fields are represented as $GF(p^m)$ with $p$ a prime number and $m$ an integer. Fields with value $m=1$ are prime fields and fields with $m\ge2$ are extension fields. Extension fields work with polynomials (have operations of addition, subtraction, multiplication, and non-negative exponentiation). Operations in the fields are in mod $p$ such that
 
 $$a+b\equiv c \text{ mod } p$$
 
@@ -136,7 +136,6 @@ AES Operations:
 - **SubBytes:** two types of S-boxes exist in AES, one for encryption and one for decryption (one being the inverse of the other). Each byte of the state matrix is considered as an input into the S-Box.
 - **ShiftRows:** performs a cyclic shift on the state matrix, where each row is shifted by a different offset.
 - **MixColumns:** each column in the state matrix is taken in turn and a new colum is produced by applying it to the polynomial
-
    ![AES MixColumns](/images/IN4191/AES_MixColumns.png)
 
 - **AddRoundKey:** the state matrix is xored with ($\oplus$) with the round key.
@@ -158,33 +157,23 @@ Block ciphers are needed but as is they cannot be used in practice because of mi
 There are many different operations but these are the 5 mainly used ones:
 
 - **Electronic Code Book Mode (ECB):** simplest operation that divides the message into blocks and encrypts them individually.
-
    ![ECB Operations](/images/IN4191/ECB.png)
-
    The problems with this mode are that the same input block will result in the same output block (repetitions in english text), deletion is possible without detection, and replay attack is possible (insert blocks from other messages). This means it is **not IND-PASS** secure and **not OW-CCA** secure but **is OW-CPA** secure.
 
 - **Cipher Block Chaining (CBC):** encrypt the message by xoring the ciphertext after encryption with the ciphertext of the previous message (IV for the first message).
-
    ![CBC Operations](/images/IN4191/CBC.png)
-
-   The problem with this mode is that it is sequential and cannot be parallelized, and single bit errors cause the whole block to be decrypted wrong and a single wrong bit in the next block. If IV is used once and never repeated it **is IND-PASS** secure, if IV is fixed it is deterministic and hence only **IND-PASS secure** and **not CPA** secure. A truly random IV **is IND-CPA** secure.
+   The problem with this mode is that it is sequential and cannot be parallelized, and single bit errors cause the whole block to be decrypted wrong and a single wrong bit in the next block. If IV is used once and never repeated it **is IND-PASS** secure, if IV is fixed it is deterministic and hence only **IND-PASS** secure and **not CPA** secure. A truly random IV **is IND-CPA** secure.
 
 - **Output Feedback Mode (OFB):** a block cipher that can be used as stream cipher.
-
    ![OFB Operations](/images/IN4191/OFB.png)
-
    with a fixed IV it is **not IND-CPA** secure and **not OW-CPA** secure. With a nonce it **is IND-CPA** secure.
 
 - **Cipher Feedback Mode (CFB):** also a block cipher that can be used a stream cipher, but here the keystream output is generated by encrypting the ciphertext.
-
    ![CFB Operations](/images/IN4191/CFB.png)
-
    with a nonce it is **not IND-CPA** secure but **is OW-CPA** secure.
 
 - **Counter Mode (CTR):** the IV is increased for every block, therefore insertion/deletion is not possible as all following decryptions will be invalid.
-
    ![CTR Operation](/images/IN4191/CTR.png)
-
    this **is IND-CPA** secure and it allows for parallel computations.
 
 Overall security for the different modes:
@@ -198,9 +187,7 @@ Overall security for the different modes:
 All previous modes of operations are not CCA secure (the decryption oracle would decrypt any old message), in order to achieve this security we need to use authentication encryption modes.
 
 - **Encrypt then MAC:** append a message authentication code to the ciphertext. This is done by
-
    ![MAC](/images/IN4191/MAC.png)
-
    and the message authentication code is applied to the ciphertext. This **is IND-CCA secure**.
 
 - **Encrypt and MAC:** works in a similar way except the encryption is done on the ciphertext (not the plaintext). This is **not IND-CPA** secure.
