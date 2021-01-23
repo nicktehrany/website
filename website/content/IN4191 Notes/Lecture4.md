@@ -12,7 +12,7 @@ markup = "mmark"
 
 #### Security Games (Chapter 2.2)
 
-Security games are used to define security for cryptographic components, which contain an adversary and a challenger, and the idea is that the adversary needs to reach a certain objective given data provided by the challenger. These are typically represented visually with the adversary in a box and the challenger outside with the date it provides. The advantage of an adversary $$A$$ is defined as a function bounded by time $$t$$ that the adversary spends to try to solve the problem. For RSA and SQRROOT games this is defined as
+Security games are used to define security for cryptographic components, which contain an adversary and a challenger, and the idea is that the adversary needs to reach a certain objective given data provided by the challenger. These are typically represented visually with the adversary in a box and the challenger outside with the data it provides. The advantage of an adversary $$A$$ is defined as a function bounded by time $$t$$ that the adversary spends to try to solve the problem. For RSA and SQRROOT games this is defined as
 
 $$Adv_v^X(A,t)=Pr[A \text{ wins the game X for }v=log_2N \text{ in time less than }t]$$
 
@@ -70,8 +70,7 @@ Users hold a public and private key pair, where the public key is used to encryp
 Different types of attacks:
 
 - **PASS:** Passive attack where the adversary should not learn the message underlying a specific ciphertext. E.g. OW-PASS depicted below, the same applies to public key crypto with public and private key pairs
-
-![ow-pass](/images/IN4191/OW_PASS.png)
+   ![ow-pass](/images/IN4191/OW_PASS.png)
 
 - **CPA:** Chosen plaintext attack where the adversary also has access to an oracle for encrypting a chosen plaintext. This is done as with PASS, the adversary has very limited power.
 E.g. in symmetric crypto this would be as follows,
