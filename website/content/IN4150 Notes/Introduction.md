@@ -3,8 +3,7 @@ date = "2021-01-10"
 description = "IN4150 Distributed Algorithms Notes"
 linktitle = ""
 publisdate = "2021-01-10"
-title = "Lecture 1: Introduction"
-slug = "Lecture 1"
+title = "Introduction"
 type = "notes"
 mathjax = "true"
 markup = "mmark"
@@ -24,8 +23,8 @@ users and are characterized by
 1. There is no regular structure such that a DS may be connected by heterogenous network technologies and consist of
 many different processors. (They still use the same communication protocols)
 2. There is no directly accessible common state such as shared variables in a shared memory.
-3. There is no common clock. _Synchronous_ systems maintain a notion of a common clock through message exchanges, whereas
-_asynchronous_ systems do not.
+3. There is no common clock. _Synchronous_ systems maintain a notion of a common clock through message exchanges where there is a bound on transmission times, whereas
+_asynchronous_ systems there are no assumptions about message transfer times.
 4. There is nondeterminism such that different components of the system kae progress independently.
 5. There are independent failure nodes.
 
