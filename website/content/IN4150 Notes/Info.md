@@ -1,5 +1,5 @@
 +++
-date = "2020-11-30"
+date = "2021-01-01"
 description = "IN4150 Distributed Algorithms Notes"
 linktitle = ""
 publisdate = "2020-11-30"
