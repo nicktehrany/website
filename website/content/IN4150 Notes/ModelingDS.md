@@ -2,7 +2,7 @@
 date = "2021-01-11"
 description = "IN4150 Distributed Algorithms Notes"
 linktitle = ""
-publisdate = "2021-01-10"
+publisdate = "2021-01-11"
 title = "Modeling Distributed Systems"
 type = "notes"
 mathjax = "true"
