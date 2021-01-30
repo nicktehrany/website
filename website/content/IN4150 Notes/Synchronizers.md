@@ -30,3 +30,5 @@ In the $\beta$-synchronizer, the nodes first elect a leader and create a spannin
 In the $\gamma$-synchronizer nodes are partitioned into clusters, where each selects a leader and constructs a spanning tree ($\beta$-synchronizer), and a single preferred link is selected that connects any two nodes of every pair of clusters. The $\beta$-synchronizer is executed in every tree, and the $\alpha$-synchronizer is executed among the trees, and when a root knows its whole tree is safe it sends a CLUSTER\_SAFE down its tree and across the preferred link to its neighboring tree.
 
 The **message complexity** if of the order $O(E)$ with $E$ the total number of links. The **time complexity** is in the oder of $O(H)$ with $H$ the maximal height of the spanning trees.
+
+Synchronizers only work in fault free systems, therefore wen faults occur synchronous systems are more powerful.
