@@ -23,7 +23,7 @@ cd dotfiles
 sudo ./install
 ```
 
-Check the [.travis.yml](https://github.com/nicktehrany/dotfiles/blob/master/.travis.yml) for packages that will be installed,
+Check the [.packages.conf.yaml](hhttps://github.com/nicktehrany/dotfiles/blob/master/packages.conf.yaml) for packages that will be installed,
 if not already installed. **All existing links or config files will be overwritten!** (Check [.install.conf.yaml](https://github.com/nicktehrany/dotfiles/blob/master/install.conf.yaml) for all links)
 
 Then just open a new konsole. The updating and installing of submodules and vscode plugins will take a few minutes.

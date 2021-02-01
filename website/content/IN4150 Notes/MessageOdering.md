@@ -29,6 +29,6 @@ Processes keep vector logical clocks initialized to all zeroes for assigning tim
 
 ### Total Ordering of Broadcast Messages
 
-Very inefficiently total ordering can be achieved using a central component for total ordering with a special process (called _sequencer_)to which all processes send their broadcast messages. The special process gives each message a sequence number and broadcasts it to all processes.
+Very inefficiently total ordering can be achieved using a central component for total ordering with a special process (called _sequencer_) to which all processes send their broadcast messages. The special process gives each message a sequence number and broadcasts it to all processes.
 
 Another algorithm uses FIFO links and scalar clocks with process ids as tie breakers (hence total order achieved). Every process also maintains a queue of non-delivered messages (but received, just buffered), which are ordered based on the timestamp. Every message is acknowledged to all other processes (including self). When a process has received an acknowledgment for the message at the head of its queue from every other process, that message is removed from the queue and is delivered.
