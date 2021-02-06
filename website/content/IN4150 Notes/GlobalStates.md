@@ -13,7 +13,7 @@ Detecting of global states is the recording of an asynchronous system at some po
 
 A cut presents a set of internal events and can be considered consistent (when receiving events happens after sending events) or inconsistent (when receiving events happen without the send events).
 
-![Cuts](/images/IN4150/GLobalStates.png)
+![Cuts](/images/IN4150/GlobalStates.png)
 
 ### Chandy's and Lamport's algorithm for detecting global states in distributed systems with unidirectional FIFO channels
 
