@@ -46,3 +46,13 @@ The algorithm can tolerate a maximum of $f$ faults. As the bottom case when $f$ 
 **Message complexity** is $(n-1)+(n-1)(n-2)+...+(n-1)(n-2)(n-f-1)=On^{f+1}$, since in each round the sending to processes becomes one less as the message is not sent to the acting commander.
 
 #### Lamport-Pease-Shostak Algorithm for Consensus in Synchronous Systems with Authentication
+
+With authentication signatures cannot be forged and modifications of a signed message can be detected. This way a false acting commander cannot change contents of previous messages from the commander when sending the values down the tree. If signatures are modified, the receiver will use the default value.
+
+#### Srikanth-Toueg Algorithm for Consensus with Authenticated broadcast in Synchronous Systems with a Completely Connected Network
+
+_Note, this algorithm is not exam material._
+
+The commander stars with some binary value $v$ that it wants to send to all other processes, which initialize their own variable $v$ to $0$. The algorithm consists of two layers, where the bottom one implements the authenticated broadcast and the upper one implements the actual algorithm. The upper layer has $f+1$ rounds. In the first round if the general is correct (non-fault) and it has $v=0$ it will never broadcast a message, and if $v=1$ it will broadcast a $1$ to all others. The other processes broadcast a $1$ only once and once they have set their own value to $1$, which happens when they received in all rounds up to and including round $r$ a $1$ from at least $r$ processes including the general.
+
+The lower layer has the requirement that a faulty process may send a signed message to some but not all correct processes.
