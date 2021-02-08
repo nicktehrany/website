@@ -13,4 +13,4 @@ IN4391 Distributed Systems notes at TUDelft (Q3).
 Studyguide: https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=55274
 Book: Andrew S. Tanenbaum, Maarten Van Steen, Distributed Systems, Principles and Paradigms (2nd Edition), Prentice Hall, 2006.
 
-All content and images are based on and retrieved from the book in addition to the content of the lectures.
+The content is based on the lecture material and summarized by myself, due to licensing no actual content of the course is copied here and any images and phrases used come from the book.
