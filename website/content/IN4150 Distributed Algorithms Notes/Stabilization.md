@@ -19,7 +19,7 @@ In systems with a _distributed demon_, it picks one process at a time to make a 
 
 #### Dijkstra’s Stabilizing Mutual-Exclusion Algorithm for a Unidirectional Ring in the Shared-Memory Model with a Central or a Distributed Demon
 
-The network is a unidirectional ring with $N$ processes $P_{0},P\_1,...,P\_{N-1}$ which are in clockwise order (so $P_0\rightarrow P_1,...$). Each process maintains one variable, which is an integer modulo $K$ for some positive value $K$. Per step, a process reads the value of its predecessor and if it is not equal to their own value sets it to the value of the predecessor. When process $P_0$ finds that his value is equal to hsi predecessor, it assigns the value $v_0+1\text{ mod }K$ to its value and its successor will then adapt this value and so forth. This can be seen as whenever one process can change their value they can enter the CS, then change the value and the next process then does the same, like a token going around the ring.
+The network is a unidirectional ring with $N$ processes $P_{0},P\_1,...,P\_{N-1}$ which are in clockwise order (so $P_0\rightarrow P_1,...$). Each process maintains one variable, which is an integer modulo $K$ for some positive value $K$. Per step, a process reads the value of its predecessor and if it is not equal to their own value sets it to the value of the predecessor. When process $P_0$ finds that his value is equal to his predecessor, it assigns the value $v_0+1\text{ mod }K$ to its value and its successor will then adapt this value and so forth. This can be seen as whenever one process can change their value they can enter the CS, then change the value and the next process then does the same, like a token going around the ring.
 
 Process $P_0$ is constantly introducing new numbers into the system up to $K$, which is called the _missing-label_ technique or _counter flushing_.
 
@@ -29,7 +29,7 @@ An illegal state in this system is when $P_0$ introduces a new value that is alr
 
 #### A Stabilizing Stop-and-Wait Datalink Algorithm
 
-For every message a process sends, it waits for an acknowledgment before sending the next message. This is done by keeping a counter, which is sent along the message and incremented on receive and compared to the local send counter that is incremented on sending a new message (when the receive counter is greater or equal to the send counter).
+For every message a process sends, it waits for an acknowledgment before sending the next message. This is done by keeping a counter, which is sent along the message and incremented on receive and compared to the local send counter that is incremented on sending a new message (when the receive counter is greater or equal to the send counter). In essence every message has a message number and each process maintains a counter and sends the message number along with the message and waits for the response with that message number before sending any more messages. The system is in a legal state if all counters (in the sender, receiver, and the message) are the same.
 
 #### Non-Stabilizing Sliding-Window Datalink Algorithm
 

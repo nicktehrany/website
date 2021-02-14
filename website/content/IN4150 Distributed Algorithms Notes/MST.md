@@ -9,7 +9,7 @@ mathjax = "true"
 markup = "mmark"
 +++
 
-A reason for using minimum-weight spanning trees (MST) is to broadcast some message along the tree with minimum weight, if for example the transmission cost is used as the weight for edges. MSTs are constructed from weighted (unique weights) undirected graphs. Unique weights are required for finding a unique solution for an MST, and for the following algorithm. a _fragment_ of graph $G$ is a subtree of its MST. Edge $e$ of $G$ is the minimum-weight outgoing edge (MOE) of fragment $F$ if it has the minimum weight that connects $F$ to another fragment.
+A reason for using minimum-weight spanning trees (MST) is to broadcast some message along the tree with minimum weight, if for example the transmission cost is used as the weight for edges. MSTs are constructed from weighted (unique weights) undirected graphs. Unique weights are required for finding a unique solution for an MST, and for the following algorithm. A _fragment_ of graph $G$ is a subtree of its MST. Edge $e$ of $G$ is the minimum-weight outgoing edge (MOE) of fragment $F$ if it has the minimum weight that connects $F$ to another fragment.
 
 ### Gallager’s, Humblet’s, and Spira’s Algorithm for the MST of an Undirected Weighted Graph with Unique Edge Weights
 

@@ -27,7 +27,7 @@ Every node that receives the _TOKEN_ for the first time forwards it to any of it
 
 When a node receives the _TOKEN_ it sends a _VISITED_ message to all its neighbors, except the parent, stopping them from ever sending it the token again (removing it from the set of unvisited neighbors), and hence cutting down on unnecessary token sends to already visited nodes. The node then waits for an _ACK_ from all the neighbors (except the parent of course) before forwarding the token to an unvisited neighbor, or back to its parent if all neighbors are visited.
 
-**Message complexity** is $2(|V|-1)$. _VISITED_ and _ACK_ messages are bounded by $4|E|$ since max 2 of each can be sent along each link
+**Message complexity** is $2(|V|-1)$ ($V$ number of nodes). _VISITED_ and _ACK_ messages are bounded by $4|E|$ since max 2 of each can be sent along each link
 
 ### Cidon's Depth-First Search Algorithm
 

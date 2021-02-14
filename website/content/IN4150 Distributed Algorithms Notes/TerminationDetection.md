@@ -16,7 +16,7 @@ Distributed computations have the following properties:
 - A process is either _active_ or _passive_
 - Only active processes can send messages
 - An active process may become passive spontaneously
-- A passive process becomes active ate the reception of a message
+- A passive process becomes active at the reception of a message
 
 ### Termination Detection in an Asynchronous Unidirectional Ring with FIFO Communication
 

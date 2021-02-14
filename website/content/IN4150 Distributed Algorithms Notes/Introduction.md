@@ -15,7 +15,7 @@ Distributed computer systems are collections of computer systems that present th
 users and are characterized by
 
 - **Autonomy:** The components of the DS have a certain power or authority to make their own decisions.
-- **Cooperation:** The components iof a DS are working together towards common goals.
+- **Cooperation:** The components of a DS are working together towards common goals.
 - **Communication:** The components of the DS exchange information.
 
 #### Properties of Distributed Systems
@@ -25,7 +25,7 @@ many different processors. (They still use the same communication protocols)
 2. There is no directly accessible common state such as shared variables in a shared memory.
 3. There is no common clock. _Synchronous_ systems maintain a notion of a common clock through message exchanges where there is a bound on transmission times, whereas in
 _asynchronous_ systems there are no assumptions about message transfer times.
-4. There is nondeterminism such that different components of the system kae progress independently.
+4. There is nondeterminism such that different components of the system can progress independently.
 5. There are independent failure nodes.
 
 #### Requirements of Distributed Systems

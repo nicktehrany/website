@@ -19,9 +19,9 @@ Reaching agreement based on every process starting with a value from the set of 
 
 ### Consensus in Synchronous Systems with Crash Failures
 
-#### An Algorithm ofr Agreement in a Synchronous System with at most $f$ Crash Failures
+#### An Algorithm for Agreement in a Synchronous System with at most f Crash Failures
 
-Every process maintains a set $W$ which initially only contains the value it start with. In each round out of a total of $f+1$ they all broadcasts their sets $W$ and set their set $W$ to the union of all sets received and their own. If after the $f+1$ rounds the set $W$ only contains one element the process decides on that element, otherwise the process decides on the default value.
+Every process maintains a set $W$ which initially only contains the value it starts with. In each round out of a total of $f+1$ they all broadcasts their sets $W$ and set their set $W$ to the union of all sets received and their own. If after the $f+1$ rounds the set $W$ only contains one element the process decides on that element, otherwise the process decides on the default value.
 
 Since there are $f+1$ rounds and at most $f$ processor failures, there is at least one round during which no processor fails. At the end of this round all still active processes will have identical sets $W$ and they will not change anymore.
 
@@ -29,9 +29,9 @@ Since there are $f+1$ rounds and at most $f$ processor failures, there is at lea
 
 ### Consensus in Synchronous Systems with Byzantine Failures
 
-Algorithms solving the Byzantine-generals problem in synchronous systems with $n$ processes, the maximal number of faulty processes $f$ has to satisfy $f< n/3$.
+Algorithms solving the Byzantine-generals problem in synchronous systems with $n$ processes, the maximal number of faulty processes $f$ has to satisfy $f< n/3$. This is interpreted as the 3 sets that exist, the malicious processes, the majority, and the minority, where there should be at least more than in the other sets. All deterministic byzantine algorithms require a minimum of $f+1$ rounds.
 
-#### Impossibility for THree Generals
+#### Impossibility for Three Generals
 
 _Impossibility results_ are consensus problems where no solutions exits, which is shown by two different scenarios that are indisitinguishable to at least one process and two processes have to reach different conclusions. Among two lieutenants and one commander there is one disloyal one and in the following two scenarios to $L_1$ the they are both the same.
 
@@ -39,11 +39,11 @@ _Impossibility results_ are consensus problems where no solutions exits, which i
 
 #### Lamport-Pease-Shostak Algorithm for Consensus in Synchronous Systems without Authentication
 
-The algorithm can tolerate a maximum of $f$ faults. As the bottom case when $f$ equals $0$ the commander sends his value to the lieutenants who simply decide on this value. When $f$ is positive, the commander sends his value to the lieutenants each of whom then executes the algorithm recursively with parameter $f-1$ as themselves as the commander and the others as the lieutenants (except the commander). Each lieutenant decides on the majority value among the value received directly from the commander and the values on which he decides as a lieutenant of the other lieutenants acting as commander. When a process does not receive a message because the sender is faulty it assumes the default value. Messages contain a value and a sequence of lieutenants through which it passed. The recursive part is taking decisions starting at level $(OM(0))$ which is the leaf level, the last value he receives, and since it is just one value he chooses it. The next level $(OM(1))$ he picks the majority of the value at the current level and all the children. THis continues until he reaches the root.
+The algorithm can tolerate a maximum of $f$ faults. As the bottom case when $f$ equals $0$ the commander sends his value to the lieutenants who simply decide on this value. When $f$ is positive, the commander sends his value to the lieutenants each of whom then executes the algorithm recursively with parameter $f-1$ as themselves as the commander and the others as the lieutenants (except the commander). Each lieutenant decides on the majority value among the value received directly from the commander and the values on which he decides as a lieutenant of the other lieutenants acting as commander. When a process does not receive a message because the sender is faulty it assumes the default value. Messages contain a value and a sequence of lieutenants through which it passed. The recursive part is taking decisions starting at level $(OM(0))$ which is the leaf level, the last value he receives, and since it is just one value he chooses it. The next level $(OM(1))$ he picks the majority of the value at the current level and all the children. This continues until he reaches the root.
 
 ![Byzantine Agreement](/images/IN4150/ByzantineAgreement.png)
 
-**Message complexity** is $(n-1)+(n-1)(n-2)+...+(n-1)(n-2)(n-f-1)=On^{f+1}$, since in each round the sending to processes becomes one less as the message is not sent to the acting commander.
+**Message complexity** is $(n-1)+(n-1)(n-2)+...+(n-1)(n-2)(n-f-1)=O(n^{f+1})$, since in each round the sending to processes becomes one less as the message is not sent to the acting commander.
 
 #### Lamport-Pease-Shostak Algorithm for Consensus in Synchronous Systems with Authentication
 
