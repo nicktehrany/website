@@ -29,7 +29,7 @@ When a process suspects to be deadlocked, it sends a _PROBE_ message to the proc
 
 Every blocked process has a _dependent set_ of processes that contains the process for which it is waiting to receive a message, and upon receiving a message from any process in the dependent set, it becomes active again.
 
-When a process suspects to be deadlocked, it sends a _QUERY_ to all processes in its dependant. Blocked processes will check the sequence number of the query, and if it has not seen it yet, propagate these messages to their dependent sets (generating a tree structure). Processes send a _REPLY_ message back to their engager process (from whom they received the query), once they have received a _REPLY_ from all the processes they themselves engaged (keep a counter of sent messages and received replies). A process is deadlocked if for every _QUERY_ message it sent it receives a _REPLY_.
+When a process suspects to be deadlocked, it sends a _QUERY_ to all processes in its dependant. Blocked processes will check the sequence number of the query, and if it has not seen it yet, propagate these messages to their dependent sets (generating a tree structure). Processes send a _REPLY_ message back to their engager process (from whom they received the query), once they have received a _REPLY_ from all the processes they themselves engaged (keep a counter of sent messages and received replies). A _REPLY_ is only sent when the process is still blocked by the same query (it has not become active by getting a response from someone else, then there is no deadlock) A process is deadlocked if for every _QUERY_ message it sent it receives a _REPLY_.
 
 ### Bracha and Toueg Deadlock Detection for Static Systems with Instantaneous Communication
 
