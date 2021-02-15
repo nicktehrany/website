@@ -35,7 +35,7 @@ For every message a process sends, it waits for an acknowledgment before sending
 
 There is a window size $w$ (represents the number of messages that have been sent but not yet received), and the sender maintains _ns_ and _na_ for the number of the next message to be sent and for the number of the next message to be acknowledged. The receiver has a counter _nr_ for the number of the next message to be received.
 
-When the receiver sends an acknowledgment it sends its current value of _nr_ which means that it acknowledges the correct recept of messages up to but not including _nr_. Upon receiving an ack, the receiver will set its value of _na_ equal to the received value if the received value is larger than _na_. Upon a time out in the sender it resends any message sent but not yet acked. The algorithm should stabilize to
+When the receiver sends an acknowledgment it sends its current value of _nr_ which means that it acknowledges the correct receipt of messages up to but not including _nr_. Upon receiving an ack, the receiver will set its value of _na_ equal to the received value if the received value is larger than _na_. Upon a time out in the sender it resends any message sent but not yet acked. The algorithm should stabilize to
 
 $$((na\le nr) \text{ and } (nr \le ns)\text{ and }(ns\le na+w)$$
 

@@ -9,6 +9,8 @@ mathjax = "true"
 markup = "mmark"
 +++
 
+## Reading Material Before Lecture
+
 ### Remote Procedure Call (RPC)
 
 RPC allows one program to call a procedure (subroutine or method) in another address space than its own, typically on
@@ -31,6 +33,9 @@ Vector clocks are a more advanced algorithm for generating causal ordering (adhe
 message contains the state of the logical clock of the sender. This is an array the size of the number of processes (an
 index for each process) of clocks for the state of each process.
 
+The difference between Lamport and Vector clocks is that Lamport is only a single value (single clock) whereas Vector
+is a collection of clocks of all processes in the system.
+
 ### Flat Naming
 
 It is vital for distributed systems to have some efficient naming scheme for the different systems/nodes, which is used
@@ -52,3 +57,6 @@ top-level domain nodes.
 LDAP is a directory service similar to flat naming in order to provide lightweight directory naming by associating a
 record in a directory entry with an associated attribute such that each record is represented as a (attribute, value)
 pair.
+
+### Lecture Notes
+

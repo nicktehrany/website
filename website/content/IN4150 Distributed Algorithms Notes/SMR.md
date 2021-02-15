@@ -57,7 +57,7 @@ If there are failures or delays and the client receives less than $3f+1$ but at 
 
 If the client receives less than $2f+1$ replies, it sends the request to all replicas who then expect the primary to still act on it. If the primary does nothing the replicas build a quorum of $f+1$ replicas that think the primary is failing by exchanging _I\_hate\-the\-primary_ messages, and once a replica receives $f+1$ such messages it sends a _view-change_ to all replicas. When the new primary (are assigned in pre-defined circular order) gets $2f+1$ _view-change_ messages it announces the new view with a broadcast.
 
-## Randomized Solutions
+### Randomized Solutions
 
 With random algorithms at some points one or more processes flip a coin to make progress towards a solution. These algorithms may always terminate but only have a correct result with some probability, or it may terminate with some probability but with a correct result, or it may only both terminate and produce a correct result with some probability.
 

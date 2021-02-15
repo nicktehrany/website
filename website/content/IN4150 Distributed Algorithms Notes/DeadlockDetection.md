@@ -13,21 +13,21 @@ markup = "mmark"
 
 A (directed) Wait-For-Graph (WFG) can be maintained with the processes as nodes and with an edge from process $P$ to process $Q$ when $Q$ is holding a resource that $P$ is requesting.
 
-In the _resource mode_ resources are associated with a process (e.g. $R_a$) and processes can then request said  resource. When a process $P$ wants access to a resource $a$ from $R_a$, an edge is created from $P$ to $R_a$, and when the resource is granted, the edge is removed and replaced by an edge from $R_a$ to $P$ indicating that $R_a$ is waiting for $P$ to release the resource. If the WFG contains a cycle there exits a deadlock and all processes in cycles on paths leading to cycles are deadlocked.
+In the _resource model_ resources are associated with a process (e.g. $R_a$) and processes can then request said  resource. When a process $P$ wants access to a resource $a$ from $R_a$, an edge is created from $P$ to $R_a$, and when the resource is granted, the edge is removed and replaced by an edge from $R_a$ to $P$ indicating that $R_a$ is waiting for $P$ to release the resource. If the WFG contains a cycle there exits a deadlock and all processes in cycles on paths leading to cycles are deadlocked.
 
 In the _communication model_ processes can do a blocking _RECEIVE_ operation to a set of processes, indicating that they want to receive a message from one process in this set (called the _dependent set_). After this _RECEIVE_ operation, the WFG contains an edge from $P$ to every process in its dependent set. If there exits a _knot_ in the WFG, there is a deadlock. A knot is present if a set of processes with a path from every process in the set to every other process in the set exists, and there are no edges from any process in the set to any process outside the set.
 
 In _N-out-of-M_ requests a process sends a request to $M$ processes that can satisfy the request and it can proceed as soon as it has received $N$ _REPLY_ messages (It may send a _RELINQUISH_ to processes from which it has not received a _REPLY_). For static systems when $N=1$ this request is called OR-request, and when $N=M$ this request is called AND-request.
 
-### Chandy, Misra, and Haas Deadlock Detection for AND Requests
+### Chandy, Misra, and Haas Deadlock Detection for AND (resource model WFG) Requests
 
 A process is said to be _dependant_ if there is a path from it to some other process in the WFG. Processes maintain an array of dependencies _dep_, initially all set to false, and sets $dep_i(j)$ to true if $P_j$ knows $P_i$ is depending on it.
 
 When a process suspects to be deadlocked, it sends a _PROBE_ message to the processes it is waiting for. The _PROBE_ messages are propagated by the receiver further through the system to the processes that the receiving process is waiting for. When the initiating process receives the _PROBE_ message, a cycle is detected and it is deadlocked (the _PROBE_ message is the form _probe(i,j,k)_ with id _i_, initiating process _j_, and receiving process _k_).
 
-### Chandy, Misra, and Haas Deadlock Detection for OR Requests
+### Chandy, Misra, and Haas Deadlock Detection for OR (communication model) Requests
 
-Every blocked process has a _dependent set_ of processes that contains the process for which it is waiting ro receive a message, and upon receiving a message from any process in the dependent set, it becomes active again.
+Every blocked process has a _dependent set_ of processes that contains the process for which it is waiting to receive a message, and upon receiving a message from any process in the dependent set, it becomes active again.
 
 When a process suspects to be deadlocked, it sends a _QUERY_ to all processes in its dependant. Blocked processes will check the sequence number of the query, and if it has not seen it yet, propagate these messages to their dependent sets (generating a tree structure). Processes send a _REPLY_ message back to their engager process (from whom they received the query), once they have received a _REPLY_ from all the processes they themselves engaged (keep a counter of sent messages and received replies). A process is deadlocked if for every _QUERY_ message it sent it receives a _REPLY_.
 
