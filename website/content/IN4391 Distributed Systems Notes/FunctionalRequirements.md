@@ -60,3 +60,66 @@ pair.
 
 ### Lecture Notes
 
+#### Raft
+
+**Safety property:** when there are no byzantine failures there should never be an incorrect result.  
+**Availability:**  $n/2+1$ servers required to produce valid result.  
+**No clocks:** Nodes do not depend on clocks.  
+**Stragglers:** It can handle stragglers (nodes making process very slowly) if $N/2+1$ servers vote in the end.  
+
+Leaders are elected for each term and each leader keeps track of the current term number, if election failed the term
+has no leader.
+
+#### Replication
+
+**Advantages:**
+
+- Reliability/Redundancy
+- geographical replication and more nodes to handle client requests
+
+**Disadvantages:**
+
+- Lower performance due to the need to maintain consistency across all servers (CAP theorem, atomic operations difficult
+on many servers)
+- Consistency also uses up resources (to manage consistency, i.e. SMR protocols)
+
+Amdahl's Law that is given as
+
+$$S(n)=\frac{1}{(1-P)+\frac{P}{n}}$$
+
+stating that speedup of an application is a function of how parallelizable the application is, throwing unlimited resources
+at it will at some point not lead to any performance gains.
+
+Replication systems have _Leaders_ or _Masters_, which are the servers that take the client requests, and _Followers_, _slaves_,
+or _Replicas_ that provide the read only data access. Systems can have a single leader (master-slave configuration), multiple
+leaders (master-master configuration) opr be leaderless replication where all nodes are the same.
+
+When the system is synchronous the writes need to be configured by a specified number of slaves before it can be considered
+successful. In an asynchronous system the master can classify it as successful immediately and the slaves apply changes
+when they are ready.
+
+**Push-based** systems are where servers provide the modifications to the slaves, whereas **pull-based** is where clients
+are asking for updates. **Leases** allow for some time the server will send updates but once the lease expires the
+client will have to start pulling or renew the lease to get the updates from the master. Leases can be age-based, renewal-
+frequency based (clients that request more often get longer leases), or overhead based (busy servers give shorter leases).
+
+#### Consistency
+
+**A**tomicity: Updates are either done full or not at all.  
+**C**onsistency: The system will always be in a valid state, transitions are only from valid to valid.  
+**I**solation: Transactions do not interfere with each other.  
+**D**urability: Modifications of successfully commited transactions are never lost.  
+
+Two schedules are **Equivalence schedules** if they work on the same transactions and the conflict pairs are ordered in
+the same way. A schedule is then considered to be correct if it is equivalent to a serializable schedule and hence is
+also serializable. Serializabily differs from linearizability in that it works on multiple objects in arbitrary order
+while linearizability works on a single object in real time order.
+
+This can be achieved by using **Two-Phase Locking** which means that in order to participate in a transaction it needs
+to acquire all necessary locks for that object (rule 1), and once a transaction releases a lock it cannot acquire any
+more locks (rule 2).
+
+In a distributed system this can be achieved with **Two-Phase Commit (2PC)** where the coordinator sends a _VOTE\_REQ_ to
+all slaves, and they respond accordingly _VOTE\_COMMIT_ or _VOTE\_ABORT_ depending on if the slave succeeded with the transaction,
+and if the coordinator receives a single abort he sends a _GLOBAL\_ABORT_ to all slaves to abort everything, otherwise if 
+he receives no abort he sends a _GLOBAL\_COMMIT_ to all the slaves.
