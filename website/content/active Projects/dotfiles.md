@@ -23,7 +23,7 @@ cd dotfiles
 sudo ./install
 ```
 
-Check the [.packages.conf.yaml](hhttps://github.com/nicktehrany/dotfiles/blob/master/packages.conf.yaml) for packages that will be installed,
+Check the [.travis.yml](https://github.com/nicktehrany/dotfiles/blob/master/.travis.yml) for packages that will be installed,
 if not already installed. **All existing links or config files will be overwritten!** (Check [.install.conf.yaml](https://github.com/nicktehrany/dotfiles/blob/master/install.conf.yaml) for all links)
 
 Then just open a new konsole. The updating and installing of submodules and vscode plugins will take a few minutes.
@@ -51,13 +51,12 @@ If you only want to relink config files or run all commands except shell (in the
 ## Visuals
 
 The current overall look for my shell and other setup (shell theme and so forth can also all be seen in the neofetch output).  
-![Visuals](/images/dotfiles/visuals.png)
+![Visuals](images/visuals.png)
 
 ### VS Code
 
 My vscode is still a work in progress as far as the right color scheme goes. Thus far it looks as follows,
 
-![VSCode](/images/dotfiles/vscode.png)
-
+![VSCode](images/vscode.png)
 If you want to play around with different colors, adjust workbench.colorCustomizations in the [settings.json](https://github.com/nicktehrany/dotfiles/blob/master/vscode/settings.json) file, and possibly add more of the vscode color variables you can set. A nicely compiled list of
 these can be found [here](https://gist.github.com/lol-russo/1c7a0b958be4b9434c5a120f24d5e7c3).
