@@ -58,9 +58,9 @@ LDAP is a directory service similar to flat naming in order to provide lightweig
 record in a directory entry with an associated attribute such that each record is represented as a (attribute, value)
 pair.
 
-### Lecture Notes
+## Lecture Notes
 
-#### Raft
+### Raft
 
 **Safety property:** when there are no byzantine failures there should never be an incorrect result.  
 **Availability:**  $n/2+1$ servers required to produce valid result.  
@@ -70,7 +70,7 @@ pair.
 Leaders are elected for each term and each leader keeps track of the current term number, if election failed the term
 has no leader.
 
-#### Replication
+### Replication
 
 **Advantages:**
 
@@ -103,7 +103,7 @@ are asking for updates. **Leases** allow for some time the server will send upda
 client will have to start pulling or renew the lease to get the updates from the master. Leases can be age-based, renewal-
 frequency based (clients that request more often get longer leases), or overhead based (busy servers give shorter leases).
 
-#### Consistency
+### Consistency
 
 **A**tomicity: Updates are either done full or not at all.  
 **C**onsistency: The system will always be in a valid state, transitions are only from valid to valid.  
