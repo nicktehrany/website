@@ -11,13 +11,13 @@ paginate     = 6
   dateformNumTime = "2006-01-02 15:04"
 
   # Subtitle for home
-  homeSubtitle = "Website with all my current and past work."
+  homeSubtitle = "My website with all my current & past work and projects."
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
 
   # Enable sharing buttons, if you linke
-  enableSharingButtons = true
+  enableSharingButtons = false
 
   # Metadata mostly used in document's head
   description = "My website with what I'm currently working on."
@@ -54,7 +54,7 @@ paginate     = 6
 
   [[menu.main]]
     identifier = "thesis"
-    name       = "Thesis"
+    name       = "Theses"
     url        = "/thesis"
 
   [[menu.main]]
