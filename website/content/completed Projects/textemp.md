@@ -16,7 +16,7 @@ and initialize the .tex files with the most basic necessities.
 
 ## Setup
 
-Clone the [repo](https://github.com/nicktehrany/textemp) anywhere you like,
+Clone the repo anywhere you like,
 
 ```bash
 git clone https://github.com/nicktehrany/textemp
@@ -39,8 +39,8 @@ within my [dotfiles](https://github.com/nicktehrany/dotfiles) repository.
 ## Execution
 
 Execution is very simple. Templates will initialize the folder with basic latex files and a full Makefile for the project.
-There are currently only 4 templates available; article template, article template with code listing style, exercise
-report (handy for multiple exercises in an assignments), and exercise report with code listing style.
+There are currently only 5 templates available; article template, article template with code listing style, exercise
+report (handy for multiple exercises in an assignments), exercise report with code listing style, and the IEEE trans template.
 The command would look as follows:
 
 ```bash
@@ -54,6 +54,7 @@ a # Article template
 ac # Article with Code template
 e # Exercise report template
 ec # Exercise report with Code template
+IEEE # For IEEE trans template
 ```
 
 A possible execution would look as follows,
