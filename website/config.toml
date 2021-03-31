@@ -28,7 +28,7 @@ paginate     = 6
   defaultTheme = "dark"
 
 [taxonomies]
-    category = "blog"
+    category = "categories"
     tag      = "tags"
     series   = "series"
 
