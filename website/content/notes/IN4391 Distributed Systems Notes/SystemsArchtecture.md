@@ -3,7 +3,7 @@ date: "2021-03-12"
 description: "IN4150 Distributed Systems Notes"
 linktitle: ""
 publisdate: "2021-03-12"
-title: "Functional Requirements"
+title: "Programming Models and System Architecture"
 mathjax: "true"
 ---
 
