@@ -10,19 +10,15 @@ mathjax = "true"
 
 What is the difference between parallel computing and distributed computing?
 
-In parallel computing there typically is one job that is split into multiple tasks, which are then split up to different
-cores/threads that run simultaneously. Such systems typically are homogenous, the hardware is all the same, i.e. the
-threads run in the same system on the same CPU.
+In parallel computing there typically is one job that is split into multiple tasks, which are then split up to different cores/threads that run simultaneously. Such systems typically are homogeneous, the hardware is all the same, i.e. the threads run in the same system on the same CPU.
 
-In distributed computing there are also multiple tasks, but these can come from one job or possibly multiple jobs. These
-tasks run on heterogenous hardware, different computers in different locations with different specifications, and hence
-requires some synchronization to keep the overall system in a legal state.
+In distributed computing there are also multiple tasks, but these can come from one job or possibly multiple jobs. These tasks run on heterogeneous hardware, different computers in different locations with different specifications, and hence requires some synchronization to keep the overall system in a legal state.
 
-Problems arise due to the need for synchronization, which is achieved by message exchanging, which is far from perfect.
-Messages can be lost, corrupted, or delayed, thus the communication is asynchronous.
+A distributed system is a system that consists of a colleciton of independent computers/servers that appear to the end user (client) as a single coherent system. A distributed system should make resources readily available and hide from the client that it is distributed (be transparent) and it should be scalable.
 
-Distributed systems can run in a shared state, shared memory, or not in a shared state, where there is no notion of a
-common clock and all communication happens with messages. Distributed systems then have the following properties
+Problems arise due to the need for synchronization, which is achieved by message exchanging, which is far from perfect. Messages can be lost, corrupted, or delayed, thus the communication is asynchronous.
+
+Distributed systems can run in a shared state, shared memory, or not in a shared state, where there is no notion of a common clock and all communication happens with messages. Distributed systems then have the following properties
 
 - **C**onsistency: stating that there exists one copy of the data that is up-to-date
 - **A**vailability: stating that it always has to be possible to modify or retrieve some data
