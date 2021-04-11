@@ -1,8 +1,8 @@
 ---
-date: "2021-02-29"
+date: "2021-02-28"
 description: "IN4150 Distributed Systems Notes"
 linktitle: ""
-publisdate: "2021-02-29"
+publisdate: "2021-02-28"
 title: "Non-Functional Requirements"
 mathjax: "true"
 ---
@@ -24,7 +24,7 @@ Different types of updates:
 - Monotonic reads: accessing the data on different devices
 - Monotonic writes: updating the data locally and propagating all changes to other servers
 
-Different notions in writing $W_2(x_1;x_2)) reads as the second write happens with $x_2$ being derived from $x_1$, which is a monotonical write (the updates of $x_1$ are propagated to the next server and the next write depends on it). Writing $W_1(x_1|x_2)$ is a write of $x_2$ that is not derived from $x_1$ therefore a read from $x_2$ would be a valid monotonical read.
+Different notions in writing $W_2(x_1;x_2))$ reads as the second write happens with $x_2$ being derived from $x_1$, which is a monotonical write (the updates of $x_1$ are propagated to the next server and the next write depends on it). Writing $W_1(x_1|x_2)$ is a write of $x_2$ that is not derived from $x_1$ therefore a read from $x_2$ would be a valid monotonical read.
 
 ### Metrics
 
