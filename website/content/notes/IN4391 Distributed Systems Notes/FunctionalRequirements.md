@@ -73,6 +73,14 @@ Grids are then connected in a layered architecture of 4 layers (connective and r
 
 Leaders are elected for each term and each leader keeps track of the current term number, if election failed the term has no leader.
 
+### Consensus
+
+A correct consensus protocol needs to fulfill:
+
+1. Termination: At some point every correct process needs to decide on some value.
+2. Integrity: If all correct processes propose some value $v$ then the final result must be that value $v$.
+3. Agreement: Every correct process has to agree on the same value.
+
 ### Replication
 
 **Advantages:**
