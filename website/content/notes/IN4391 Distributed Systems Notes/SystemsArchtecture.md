@@ -12,7 +12,7 @@ mathjax: "true"
 - The Architecture, is it client-server, hierarchical, peer-to-peer, etc.
 - The programming model that is used, is it remote procedure call (RPC), library based, actor model based (akka), mapreduce, etc.
 
-Tradeoffs between the different programming modles and the sotware architecture have to be made, based on the function/non-functional requirements, the cost of convenience, which is easier to use based on the hardware for example, and which is needed for a large scale system.
+Tradeoffs between the different programming modles and the sotware architecture have to be made, based on the functional/non-functional requirements, the cost of convenience, which is easier to use based on the hardware for example, and which is needed for a large scale system.
 
 ### Programming Model
 
@@ -60,7 +60,7 @@ Sometimes it is necessary for self adapting systems that change based on some mo
 Many different architectures exist:
 
 - Star (centralized): such as clients only communicating with servers but not with other clients. Or Spark nodes only communicating with the master (though sometimes nodes can communicate with each other)
-- Hierarchical: DNS is the best example for this, and provides a quicker way to send messages. Imagine peer-to-peer for looking up an IP you would have to possible ask everyone, but with DNS you can find it through three traversal from the root down.
+- Hierarchical: DNS is the best example for this, and provides a quicker way to send messages. Imagine peer-to-peer for looking up an IP you would have to possible ask everyone, but with DNS you can find it through tree traversal from the root down.
 - Super-peers: peers are connected to other peers that have some additional responsiblity (hence super), and these super nodes are then connected to other super nodes. This replaces the need for servers, as it was used by Skype earlier.
 - All-peers (decentralized): BitTorrent or other peer-to-peer networks.
 

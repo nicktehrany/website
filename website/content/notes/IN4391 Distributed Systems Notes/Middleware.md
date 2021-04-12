@@ -7,8 +7,6 @@ title: "Middleware"
 mathjax: "true"
 ---
 
-## Middleware
-
 Middleware is the part that goes between the OS (or lower level parts) and the applications, these define a set of protocols and APIs between the applications and the network or OS for services and communication. Java RMI is an example of this. Three levels of middleware exist:
 
 1. Basic messaging

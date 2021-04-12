@@ -16,7 +16,7 @@ Google Borg is a management system for clusters that run several hundreds of tho
 
 ### Resource Management in Cloud
 
-Clouds contain large quantities of shared resources that provide provide these to large pools of data and computing  with a variety of different interfaces. An important part of cloud computing is resource management, as there only are finite resources available.
+Clouds contain large quantities of shared resources that provide these to large pools of data and computing  with a variety of different interfaces. An important part of cloud computing is resource management, as there only are finite resources available.
 
 ### Slurm
 

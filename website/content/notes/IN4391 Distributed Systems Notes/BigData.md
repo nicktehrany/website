@@ -7,8 +7,6 @@ title: "Big Data and Distributed ML"
 mathjax: "true"
 ---
 
-## Big Data and Distributed ML
-
 Three different models of parallel computing:
 
 1. Shared memory with multiple CPUs connected to a cache-coherent interconnect to multiple RAM modules, to which all have access.

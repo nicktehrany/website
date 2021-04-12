@@ -12,13 +12,13 @@ mathjax = "true"
 ### Four Types of Architecture
 
 1. Layered: where each part is stacked on top of each other and communicates down and up the stack only (e.g. TCP/IP stack)
-2. Object: where each object can communicate with other objects using remove method calls.
+2. Object: where each object can communicate with other objects using remote method calls.
 3. Event based: where there is one message bus that connects the different components and each component can then publish events on the message bus.
 4. Shared data: where there is some shared (persistent) data space to which components can publish data or request data from.
 
 ### Remote Procedure Call (RPC)
 
-RPC allows one program to call a procedure (subroutine or method) in another address space than its own, typically on another system, without the programmer explicitly implementing this remote interaction but instead it is the same a if a local process would invoke some method, except now it comes from a non-local process.
+RPC allows one program to call a procedure (subroutine or method) in another address space than its own, typically on another system, without the programmer explicitly implementing this remote interaction but instead it is the same as if a local process would invoke some method, except now it comes from a non-local process.
 
 ### Message Bus
 
@@ -36,7 +36,7 @@ The difference between Lamport and Vector clocks is that Lamport is only a singl
 
 ### Flat Naming
 
-It is vital for distributed systems to have some efficient naming scheme for the different systems/nodes, which is used as their identifier or to determine their location and many more. With flat naming, the identifier is just a set of bits.
+It is vital for distributed systems to have some efficient naming scheme for the different systems/nodes, which is used as their identifier or to determine their location and much more. With flat naming, the identifier is just a set of bits.
 
 ### Hierarchical Naming
 
@@ -67,9 +67,12 @@ Grids are then connected in a layered architecture of 4 layers (connective and r
 ### Raft
 
 **Safety property:** when there are no byzantine failures there should never be an incorrect result.
+
 **Availability:**  $n/2+1$ servers required to produce valid result.
+
 **No clocks:** Nodes do not depend on clocks.
-**Stragglers:** It can handle stragglers (nodes making process very slowly) if $N/2+1$ servers vote in the end.
+
+**Stragglers:** It can handle stragglers (nodes making progress very slowly) if $N/2+1$ servers vote in the end.
 
 Leaders are elected for each term and each leader keeps track of the current term number, if election failed the term has no leader.
 
@@ -108,8 +111,11 @@ When the system is synchronous the writes need to be configured by a specified n
 ### Consistency
 
 **A**tomicity: Updates are either done full or not at all.
+
 **C**onsistency: The system will always be in a valid state, transitions are only from valid to valid.
+
 **I**solation: Transactions do not interfere with each other.
+
 **D**urability: Modifications of successfully commited transactions are never lost.
 
 Two schedules are **Equivalence schedules** if they work on the same transactions and the conflict pairs are ordered in the same way. A schedule is then considered to be correct if it is equivalent to a serializable schedule and hence is also serializable. Serializabily differs from linearizability in that it works on multiple objects in arbitrary order while linearizability works on a single object in real time order.

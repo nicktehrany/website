@@ -7,8 +7,6 @@ title: "Non-Functional Requirements"
 mathjax: "true"
 ---
 
-## Non-Functional Requirements
-
 ### Consistency
 
 Client vs. data centric consistency, in the client side model there is a consistency model for every client but not a global consistency. From the perspective of the client there is no difference in the two models. When to use which model is a tradeoff decision again, therefore when you can afford it you want to use a weaker consistency model. The client consistency can be used if there is some notion of a client session.
@@ -30,11 +28,11 @@ Different notions in writing $W_2(x_1;x_2))$ reads as the second write happens w
 
 As most systems use a queue for storing tasks before they can be executed, queuing theory can be used for measuring the performance of a system with the arrival time, start time, end time, wait time, etc.
 
-One of the modern metrics is elasticity which is the degree to which a system adapts to workload changes that adapting resources dynamically depending on the needs.
+One of the modern metrics is elasticity which is the degree to which a system adapts to workload changes that adapt resources dynamically depending on the needs.
 
 ### Gustafson's Law of Weak Scaling
 
-For any problem that we look at, we look at the relationship between smaller and larger jobs, the communication overhead is almost the same, therefore if we exploit more parallelism for larger jobs, the sequential parts stay constant and additional resources are only used for larger lobs and the speedup comes from the sequential portion.
+For any problem that we look at, we look at the relationship between smaller and larger jobs, the communication overhead is almost the same, therefore if we exploit more parallelism for larger jobs, the sequential parts stay constant and additional resources are only used for larger jobs and the speedup comes from the sequential portion.
 
 ### Evaluating Performance Metrics
 
