@@ -14,4 +14,8 @@ A reason for using minimum-weight spanning trees (MST) is to broadcast some mess
 
 The idea of the algorithm is to have fragments connect to each other along their MOEs, starting with single node fragments and resulting with the final MST. The MST is constructed by repeatedly connecting pairs of fragments along a single edge that is the MOE of one of the fragments. Each fragment has a _level_, and single node fragments start with level 0, and a _core_. The level is used for deciding wether to merge or absorb other fragments, and is only increased when a merge happens. With a merge, the core will also be changed to the edge along which the merge happened.
 
-**Message complexity** is $O(5*|V|* \text{ log }|V|+2*|E|)$. A MST of level $k$ has a maximum of $2^k$ nodes.
+**Message complexity** is
+
+$$O(5*|V|* \text{ log }|V|+2*|E|)$$
+
+A MST of level $k$ has a maximum of $2^k$ nodes.
