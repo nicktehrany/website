@@ -33,7 +33,7 @@ export TEXTEMP="$PATH/TO/textemp"
 where /PATH/TO/textemp is the path to where the textemp repository is saved. (Note the repository folder is called textemp,
 as well as the script)
 
-If in doubt, have a look at my [.zshrc](https://github.com/nicktehrany/dotfiles/blob/master/.zsh/.zshrc), which is contained
+If in doubt, have a look at my [.zshrc](https://github.com/nicktehrany/dotfiles/blob/master/zsh/.zshrc), which is contained
 within my [dotfiles](https://github.com/nicktehrany/dotfiles) repository.
 
 ## Execution
