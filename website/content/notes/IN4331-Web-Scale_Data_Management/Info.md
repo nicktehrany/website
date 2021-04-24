@@ -12,4 +12,4 @@ IN4331 Web-Scale Data Management notes at TUDelft (Q4).
 
 Studyguide: https://studiegids.tudelft.nl/a101_displayCourse.do?course_id=55287
 
-The content is based on the lecture material and summarized by myself.
+The content is based on the lecture material/slides and summarized by myself.
