@@ -1,8 +1,8 @@
 ---
-date: "2021-04-22"
+date: "2021-04-15"
 description: "IN4331 Web-Scale Data Management"
 linktitle: ""
-publisdate: "2021-04-22"
+publisdate: "2021-04-15"
 title: "Info"
 slug: "Info"
 type: "notes"
