@@ -35,3 +35,9 @@ There are several different P2P systems:
     $$targedId = (currId + 2^i) \text{ mod } 2^m$$
 
     Routing requests for a node can then be directly forwarded to the node by sending it to the most distant known node which is below the value that is being looked up (always cutting the search space in half).
+
+### Amazon Dynamo
+
+Assumes that there are not malicious nodes (no need for fraud detection), and implements a `put()` and `get()` for the storage system based on a DHT. In order to answer queries fast, each node maintains a full finger table (therefore the ring is fully connected) and there are no varying response times in the network. For load balancing each node also creates an additional virtual server so that if a node if under heavy load the virtual server (its partitions it is responsible for) can just be moved to a new node.
+
+Updates (after `put()`) updates are propagated asynchronously, resulting in eventual consistency. It also uses read/write quorums such that the `put()` operation does not return until the majority of replicas have been updated (or however many nodes the quorum requires).

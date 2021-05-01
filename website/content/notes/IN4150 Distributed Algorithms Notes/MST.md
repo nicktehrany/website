@@ -16,6 +16,6 @@ The idea of the algorithm is to have fragments connect to each other along their
 
 **Message complexity** is
 
-$$O(5*|V|* \text{ log }|V|+2*|E|)$$
+$$O(5*\|V\|* \log{} \|V\|+2*\|E\|)$$
 
 A MST of level $k$ has a maximum of $2^k$ nodes.
