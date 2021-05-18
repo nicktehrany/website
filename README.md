@@ -8,3 +8,19 @@ The website is powered by [Hugo](https://gohugo.io/) and uses the [hello-friend-
 
 For math functions use `$ latex code $` for inline math and `$$ latex code $$` for blocks, but if blocks contain newline (`\\`)
 the entire latex math code needs to be encapsulated in a `$$\displaylines{latex \\ code}$$`
+
+## Commands
+
+In the website dir run,
+
+### Generate new course folder for notes
+
+```bash
+hugo new -k course notes/new_course
+```
+
+### Generate new note file for course notes
+
+```bash
+hugo new -k note notes/IN4331-Web-Scale-Data-Management/new_note.md
+```

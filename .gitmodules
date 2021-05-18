@@ -5,4 +5,4 @@
 [submodule "website/themes/hello-friend-ng"]
 	path = website/themes/hello-friend-ng
 	url = https://github.com/rhazdon/hugo-theme-hello-friend-ng.git
-	ignore = dirty
+	ignore = all
