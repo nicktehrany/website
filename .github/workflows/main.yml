@@ -13,11 +13,13 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.74.3"
+      
+      - name: Setup themes
         run: |
           git submodule update --init --recursive
           cd themes/hello-friend-ng
           git checkout 4c3a69eaa6b3747fc5344fa4e1311459d6e0b88f
-
+  
       - name: Build
         run: hugo --minify
 
