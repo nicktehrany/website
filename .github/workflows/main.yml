@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: website/
+        working-directory: ./website/
     steps:
       - uses: actions/checkout@v2
       
@@ -26,7 +26,7 @@ jobs:
         with:
           personal_token: ${{ secrets.TOKEN }}
           external_repository: nicktehrany/nicktehrany.github.io
-          publish_dir: ./public
+          publish_dir: ./website/public
           user_name: nicktehrany
           user_email: nicktehrany1@gmail.com
           publish_branch: master
