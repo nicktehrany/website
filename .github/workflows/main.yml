@@ -20,10 +20,10 @@ jobs:
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
-          personal_token: ${{ secrets.TOKEN }}
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: nicktehrany/nicktehrany.github.io
           publish_dir: ./public
           user_name: nicktehrany
-          commit_message: Redeploy
+          commit_message: ${{ github.event.head_commit.message }}
           user_email: nicktehrany1@gmail.com
           publish_branch: master
