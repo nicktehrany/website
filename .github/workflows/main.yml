@@ -15,6 +15,7 @@ jobs:
           hugo-version: "0.74.3"
       
       - name: Build
+        working-directory: /website/
         run: hugo --minify
 
       - name: Deploy
