@@ -2,19 +2,18 @@ name: CI
 on:
   push:
     branches: [ master ]
-    
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    defaults:
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Setup hugo
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.74.3"
-      
+
       - name: Build
         run: hugo --minify
 
@@ -28,6 +27,3 @@ jobs:
           user_name: nicktehrany
           user_email: nicktehrany1@gmail.com
           publish_branch: master
-
-
-
