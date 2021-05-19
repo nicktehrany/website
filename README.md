@@ -9,6 +9,18 @@ The website is powered by [Hugo](https://gohugo.io/) and uses the [hello-friend-
 For math functions use `$ latex code $` for inline math and `$$ latex code $$` for blocks, but if blocks contain newline (`\\`)
 the entire latex math code needs to be encapsulated in a `$$\displaylines{latex \\ code}$$`
 
+## Setup
+
+'''bash
+git clone https://github.com/nicktehrany/website
+git submodule init
+git submodule update --remote --merge
+
+# Need to specify certain commit of theme since it causes issues
+cd themes/hello-friend-ng
+git checkout 4c3a69eaa6b3747fc5344fa4e1311459d6e0b88f
+```
+
 ## Commands
 
 In the website dir run,
