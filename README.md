@@ -20,6 +20,9 @@ git submodule update --remote --merge
 cd themes/hello-friend-ng
 git checkout 4c3a69eaa6b3747fc5344fa4e1311459d6e0b88f
 ```
+## Contributing
+
+If you have changes/improvements/spelling fixes or just additions to my Uni notes, feel free to put in a pull request!
 
 ## Commands
 
