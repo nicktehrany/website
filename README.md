@@ -22,18 +22,20 @@ git checkout 4c3a69eaa6b3747fc5344fa4e1311459d6e0b88f
 ```
 ## Contributing
 
-If you have changes/improvements/spelling fixes or just additions to my Uni notes, feel free to put in a pull request!
+If you have changes/improvements/spelling fixes or just additions to my Uni notes, feel free to put in a pull request! Also add yourself with your github link as an author to the info.md file of the respective notes folder, where you contributed changes.
 
 ## Commands
 
 ### Generate new course folder for notes
 
 ```bash
-hugo new -k course notes/new_course
+hugo new -k course notes/new-course
 ```
+
+Note that naming needs to be done with `-` to parse titles correctly, when the folder/file contains multiple words.
 
 ### Generate new note file for course notes
 
 ```bash
-hugo new -k note notes/IN4331-Web-Scale-Data-Management/new_note.md
+hugo new -k note notes/IN4331-Web-Scale-Data-Management/new-note.md
 ```
