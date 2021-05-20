@@ -21,10 +21,11 @@ jobs:
           git checkout 4c3a69eaa6b3747fc5344fa4e1311459d6e0b88f
   
       - name: Build
+        id: build
         run: hugo --minify
 
       - name: Deploy
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+        if: ${{ steps.build.outcome == 'success' && github.event_name == 'push' && github.ref == 'refs/heads/master' }}
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
