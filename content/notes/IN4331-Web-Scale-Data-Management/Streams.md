@@ -13,13 +13,13 @@ change) and is updated. A data stream is a stream of events with each element ha
 Types of data:
 
 - **Bounded data:** a dataset with a beginning and an end.
-- **Unbounded data:** a dataset without an end or an end.
+- **Unbounded data:** a dataset without a beginning or an end.
 
 Types of processing:
 
 - **Stream processing:** continuous stream of processing that continuously produces new results, systems such as Apache
     Flink or Apache Storm
-- ** Batch processing:** processing which takes a finite amount of time to complete and for it to produce results,
+- **Batch processing:** processing which takes a finite amount of time to complete and for it to produce results,
     systems such as Apache Hadoop MapReduce and Apache Spark
 
 ### Stream Processing

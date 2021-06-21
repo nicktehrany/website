@@ -22,7 +22,7 @@ Replication without a master node, now updates can be on any of the replicas whi
 
 ### Two Phase Commit (2PC)
 
-Transactions are submitted to a coordinator which then sends a prepare to all workers. The workers log the request and respond to the coordinator. When the coordinator receives an _ready_ from all the workers it sends a commit message to all workers which says that the workers should do all the work that was proposed in the prepare. In the prepare the workers just say if the request is possible. If any of the workers responds with a _failure_ the coordinator will stop the request and tell all the workers to abort via an _ABORT_ message and any preparation work by the worker will be stopped (clean the log).
+Transactions are submitted to a coordinator which then sends a prepare to all workers. The workers log the request and respond to the coordinator. When the coordinator receives a _ready_ from all the workers it sends a commit message to all workers which says that the workers should do all the work that was proposed in the prepare. In the prepare the workers just say if the request is possible. If any of the workers responds with a _failure_ the coordinator will stop the request and tell all the workers to abort via an _ABORT_ message and any preparation work by the worker will be stopped (clean the log).
 
 ### Linearizability vs. Serializability
 

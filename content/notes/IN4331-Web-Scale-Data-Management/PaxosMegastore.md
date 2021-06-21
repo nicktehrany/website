@@ -1,5 +1,5 @@
 ---
-title: "PaxosMegastore"
+title: "Paxos Megastore"
 date: 2021-05-25T17:05:50+02:00
 publishdata: 2021-05-25T17:05:50+02:00
 type: "notes"

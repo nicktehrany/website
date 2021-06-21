@@ -12,7 +12,7 @@ mathjax: "true"
 
 Relational dbs such as SQL go through a stack that starts with the SQL compiler & optimizer and then executes them on a
 relational dataflow engine, on top of the transaction manager, which then is on top of the storage and the OS. Big data
-on the other hand, also have the SQL compiler & optimizer which then runs of top of different dataflow engines (Flink,
+on the other hand, also has the SQL compiler & optimizer which then runs of top of different dataflow engines (Flink,
 Spark, Hadoop). Essentially running a dataflow engine on top of a distributed file system.
 
 ### Parallelism in Databases

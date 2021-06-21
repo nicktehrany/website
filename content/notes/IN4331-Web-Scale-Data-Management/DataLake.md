@@ -15,10 +15,10 @@ The problem starts in the management of big data, which has the following requir
 - **Volume:** the data is typically large
 - **Variety:** the type of the data varies
 - **Velocity:** the data needs to be accessed and processed quickly
-- Veracity: the quality of the data needs to be maintained and guaranteed
-- Value: the data is used for intended purposes and holds value to that purpose
+- **Veracity**: the quality of the data needs to be maintained and guaranteed
+- **Value**: the data is used for intended purposes and holds value to that purpose
 
-Data lakes are a way of storing large amounts of data without strict structure and guidelines, and all data is just "dumped" there. However, this can quickly lead to data swamps, therefore the data lake is more of a set of centralized repositories of raw data, which can be structure or unstructured. There must be metadata to describe and organize the data and be able to quicky query or process the data.
+Data lakes are a way of storing large amounts of data without strict structure and guidelines, and all data is just "dumped" there. However, this can quickly lead to data swamps, therefore the data lake is more of a set of centralized repositories of raw data, which can be structure or unstructured. There must be metadata to describe and organize the data and be able to quickly query or process the data.
 
 ## Data Integration
 
