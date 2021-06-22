@@ -1,5 +1,5 @@
 ---
-date: "2021-04-22"
+date: "2021-04-24"
 description: "IN4331 Web-Scale Data Management Notes"
 linktitle: ""
 publisdate: "2021-04-24"
