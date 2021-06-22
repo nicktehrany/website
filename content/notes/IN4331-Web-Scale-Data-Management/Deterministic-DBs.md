@@ -15,4 +15,4 @@ Therefore, clients will contact a sequencer which will create the order of opera
 multiple sequencers, the sequencers will individually use Paxos to decide on the order (if clients send requests to two
 different sequencers for example), and sequencers in Calvin will talk to the scheduler every 10ms to schedule a batch of
 operations. The order of operations is created by the sequencer, it will pass this to the scheduler, which then applies
-additionally needed procedures, such as 2PL (2 phase locking) if it is needed by the order of operations to be safe.
+the schedule for the actual locking.

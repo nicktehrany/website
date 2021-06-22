@@ -52,7 +52,7 @@ which is just the intersection of two sets and can be used for finding joinable 
 
 ### Dataset Discovery Optimizations
 
-As this is very slow (due to having to do many calculations in data leaks), there have been several proposals for accelerating this procedure
+As this is very slow (due to having to do many calculations in data lake), there have been several proposals for accelerating this procedure
 
 #### LSH Ensemble
 

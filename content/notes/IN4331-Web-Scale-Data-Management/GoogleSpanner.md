@@ -22,7 +22,7 @@ uses TrueTime.
 
 ### TrueTime
 
-Presents a global time with a bounded uncertainty given `TT.now()` is given in a window with and `earliest` and
+Presents a global time with a bounded uncertainty given `TT.now()` is given in a window with an `earliest` and
 `lastest` time which falls in the interval of $2*\varepsilon$. Then picking a time `TT.now().latest` which is an upper
 bound on time in the future gives that timestamp $s$ falls within the interval of the releasing of locks. This is done
 by waiting out the uncertainty in clocks (waiting for actual releasing of clocks), called the *commit wait*, which in
