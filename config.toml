@@ -53,11 +53,6 @@ paginate     = 6
     url        = "/publications"
 
   [[menu.main]]
-    identifier = "thesis"
-    name       = "Theses"
-    url        = "/thesis"
-
-  [[menu.main]]
     identifier = "projects"
     name       = "Projects"
     url        = "/projects"
@@ -66,6 +61,11 @@ paginate     = 6
     identifier = "notes"
     name       = "Uni Notes"
     url        = "/notes"
+
+  [[menu.main]]
+    identifier = "blog"
+    name       = "Blog"
+    url        = "/blog"
 
   [[params.social]]
     name = "github"
