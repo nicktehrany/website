@@ -2,7 +2,7 @@
 title: "Useful Commands"
 date: 2021-07-17T14:02:11+02:00
 publishdata: 2021-07-17T14:02:11+02:00
-type: "blog"
+type: "post"
 mathjax: true
 ---
 

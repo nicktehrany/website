@@ -2,6 +2,6 @@
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
 publishdata: {{ .Date }}
-type: "blog"
+type: "post"
 mathjax: true
 ---
