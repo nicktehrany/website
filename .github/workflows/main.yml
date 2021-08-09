@@ -13,13 +13,13 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: "0.74.3"
-      
+
       - name: Setup themes
         run: |
           git submodule update --init --recursive
           cd themes/hello-friend-ng
           git checkout 4c3a69eaa6b3747fc5344fa4e1311459d6e0b88f
-  
+
       - name: Build
         id: build
         run: hugo --minify
@@ -30,7 +30,6 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: nicktehrany/nicktehrany.github.io
-          publish_dir: ./public
           user_name: nicktehrany
           commit_message: ${{ github.event.head_commit.message }}
           user_email: nicktehrany1@gmail.com
