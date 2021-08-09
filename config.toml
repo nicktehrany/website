@@ -63,9 +63,9 @@ paginate     = 6
     url        = "/notes"
 
   [[menu.main]]
-    identifier = "blog"
-    name       = "Blog"
-    url        = "/blog"
+    identifier = "posts"
+    name       = "Posts"
+    url        = "/posts"
 
   [[params.social]]
     name = "github"

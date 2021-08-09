@@ -91,6 +91,8 @@ Super + g # floating mode
 
 ### Key Remapping
 
+I use these to remap CAPS lock to esc and home to delete.
+
 ```bash
 xev # gui to find out the keycode of a key
 xmodmap -e 'keycode 110=Delete' # remaps the home key to delete
