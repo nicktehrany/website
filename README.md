@@ -37,5 +37,5 @@ Note that naming needs to be done with `-` to parse titles correctly, when the f
 ### Generate new note file for course notes
 
 ```bash
-hugo new -k note notes/IN4331-Web-Scale-Data-Management/new-note.md
+hugo new -k note notes/[course]/content/[new-note].md
 ```
