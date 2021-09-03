@@ -51,21 +51,31 @@ paginate     = 6
     identifier = "publications"
     name       = "Publications"
     url        = "/publications"
+    weight     = "2"
+
+  [[menu.main]]
+    identifier = "awards"
+    name       = "Awards"
+    url        = "/awards"
+    weight     = "1"
 
   [[menu.main]]
     identifier = "projects"
     name       = "Projects"
     url        = "/projects"
+    weight     = "3"
 
   [[menu.main]]
     identifier = "notes"
     name       = "Uni Notes"
     url        = "/notes"
+    weight     = "5"
 
   [[menu.main]]
     identifier = "posts"
     name       = "Posts"
     url        = "/posts"
+    weight     = "4"
 
   [[params.social]]
     name = "github"
