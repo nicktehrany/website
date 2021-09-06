@@ -1,5 +1,6 @@
 {{ define "main" }}
     <main aria-role="main">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
         <div>
             {{ if .Site.Params.Portrait.Path }}
                <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
@@ -10,6 +11,13 @@
                 <p>{{.}}</p>
             {{- end }}
 
+            {{- with .Site.Params.social }}
+                <div>
+                    {{ partial "social-icons.html" . }}
+                    <a href="/misc/cv.pdf" target="_self"><i class="ai ai-cv ai-2x"></i></a>
+                    <a href="https://www.semanticscholar.org/author/Tehrany/2105151990" target="_self"><i class="ai ai-semantic-scholar ai-2x"></i></a>
+                </div>
+            {{- end }}
         </div>
     </main>
 {{ end }}
