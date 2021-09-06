@@ -1,9 +1,8 @@
-+++
-date = "2020-12-10"
-description = "Amsterdam Data Science Thesis Award"
-title = "Amsterdam Data Science Thesis Award"
-slug = "Amsterdam Data Science Thesis Award"
-+++
+---
+date: "2020-12-10"
+title: "Amsterdam Data Science Thesis Award"
+type: "award"
+---
 
 ![Amsterdam Data Science](/images/misc/ads.png)
 
