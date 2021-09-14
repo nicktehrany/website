@@ -30,3 +30,4 @@ Extensions of memory systems:
 
 - Shared cache, where processors share caches and memory.
 - Bus-based shared memory (Symmetric Multiprocessors - SMP), where processors share the same memory and bus to it.
+

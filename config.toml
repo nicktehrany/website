@@ -17,7 +17,7 @@ paginate     = 6
   disableReadOtherPosts = false
 
   # Enable sharing buttons, if you linke
-  enableSharingButtons = false
+  enableSharingButtons = true
 
   # Metadata mostly used in document's head
   description = "My website with what I'm currently working on."
@@ -73,7 +73,7 @@ paginate     = 6
 
   [[menu.main]]
     identifier = "posts"
-    name       = "Posts"
+    name       = "Blog"
     url        = "/posts"
     weight     = "4"
 
