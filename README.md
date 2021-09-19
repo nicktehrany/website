@@ -16,9 +16,9 @@ git clone https://github.com/nicktehrany/website
 git submodule init
 git submodule update --remote --merge
 
-# Need to specify certain commit of theme since it causes issues
+# Need to specify certain commit of theme since it causes issues and I like the button to switch between dark/light theme
 cd themes/hello-friend-ng
-git checkout 4c3a69eaa6b3747fc5344fa4e1311459d6e0b88f
+git reset 8035db5 --hard
 ```
 ## Contributing
 
