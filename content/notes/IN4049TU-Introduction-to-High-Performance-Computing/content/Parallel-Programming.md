@@ -17,3 +17,5 @@ With MPI programs, the processes that execute the program all have their own loc
 For enabling communication for processes that don't share memory.
 
 `MPI_Send` and `MPI_Recv` are both blocking calls, therefore deadlocks can occur and should be avoided.
+
+
