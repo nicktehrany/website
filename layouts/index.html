@@ -11,13 +11,13 @@
                 <p>{{.}}</p>
             {{- end }}
 
-            <!-- {{- with .Site.Params.social }} -->
-            <!--     <div> -->
-            <!--         {{ partial "social-icons.html" . }} -->
-            <!--         <a href="/misc/cv.pdf" target="_self"><i class="ai ai-cv ai-2x"></i></a> -->
-            <!--         <a href="https://www.semanticscholar.org/author/Tehrany/2105151990" target="_self"><i class="ai ai-semantic-scholar ai-2x"></i></a> -->
-            <!--     </div> -->
-            <!-- {{- end }} -->
+            {{- with .Site.Params.social }}
+                <div>
+                    {{ partial "social-icons.html" . }}
+                    <!-- <a href="/misc/cv.pdf" target="_self"><i class="ai ai-cv ai-2x"></i></a> -->
+                    <a href="https://www.semanticscholar.org/author/Tehrany/2105151990" target="_self"><i class="ai ai-semantic-scholar ai-2x"></i></a>
+                </div>
+            {{- end }}
         </div>
     </main>
 {{ end }}
