@@ -12,7 +12,7 @@ We have the following
 
 - $T_S$ is the Serial execution time, or the part that is done sequentially and how long that takes
 - $T_P$ the parallel execution time,
-- $T_O$ The overhead, given as %T_O = p * T_P - T_S$ with $p$ parallel processes. $T_O$ is equal to 0 in the optimal case.
+- $T_O$ The overhead, given as $T_O = p * T_P - T_S$ with $p$ parallel processes. $T_O$ is equal to 0 in the optimal case.
 - Speedup is given as $S=\frac{T_{serial_best}}{T_P}$
 
 Then we have efficiency given as multiple equivalent options
