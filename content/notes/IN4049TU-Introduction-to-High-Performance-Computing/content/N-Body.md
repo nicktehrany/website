@@ -18,7 +18,7 @@ Since such complete tree would waste space, as there are not the same number of 
 
 ## Barnes-Hut Algorithm
 
-It uses the quad tree and then for each node calculates the CM of all its particles (so it's children) then uses this to compute forces of sub-squares. Complexity is $O(N \textmd{log} N)$ just like the prior tree methods.
+It uses the quad tree and then for each node calculates the CM of all its particles (so it's children) then uses this to compute forces of sub-squares. Complexity is $O(N \text{log} N)$ just like the prior tree methods.
 
 ## Fast Multipole Method (FMM)
 
