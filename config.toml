@@ -21,7 +21,7 @@ paginate     = 6
 
   # Metadata mostly used in document's head
   description = "My website with what I'm currently working on."
-  keywords = "homepage, blog"
+  keywords = "homepage "
   images = [""]
 
   # Default theme "light" or "dark"
@@ -69,12 +69,6 @@ paginate     = 6
     identifier = "notes"
     name       = "Uni Notes"
     url        = "/notes"
-    weight     = "5"
-
-  [[menu.main]]
-    identifier = "posts"
-    name       = "Blog"
-    url        = "/posts"
     weight     = "4"
 
   [[params.social]]
