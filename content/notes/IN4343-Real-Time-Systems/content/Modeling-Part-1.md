@@ -1,5 +1,5 @@
 ---
-title: "Modeling"
+title: "Modeling Part 1"
 date: 2022-02-11T14:01:01+01:00
 publishdata: 2022-02-11T14:01:01+01:00
 type: "notes"
