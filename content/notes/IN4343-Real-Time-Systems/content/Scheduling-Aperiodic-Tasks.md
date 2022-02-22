@@ -42,3 +42,22 @@ Therefore, we can use a heuristical approach. This selects the step to take at a
 ![Non-Preemptive Scheduling Optimization](/images/IN4343/np-schedule-optimization.png)
 
 precedence constraints are then handled by assigning the appropriate weights to the heuristical function.
+
+## Latest Deadline First (LDF)
+
+This algorithm makes use of the precedence graph (DAG) based off which it constructs the schedule. It solves it in polynomial time on the number of tasks and minimizes the maximum lateness. It works by taking the DAG, constructing from the tail of it, and for tasks with no successor (or already selected ones) it takes the task with the latest deadline to execute last. Then, at runtime it takes the head of the queue to execute first.
+Start with the leaf nodes that have no children (no task dependency beyond themselves) and place the ones with largest absolute deadline at the head of the queue. This constructs a heap where the tasks with dependencies and later deadlines are further in the heap. __Important here that first means first on heap, such that it is at the bottom and hence last to be executed__
+
+![LDF](/images/IN4343/ldf.png)
+
+## Scheduling with Precedence Constraints (EDF*)
+
+With this algorithm, it is required to know the arrival times in advance, and then construct a task set that is equivalent but has no precedence constraints, on which we then apply EDF. This transformation requires to postpone the arrival time of successors and advance the deadlines of predecessors (not their real deadlines but the one the system uses to transform).
+
+Transformations are as follows, where $k$ depicts the predecessors of a task.
+
+![EDF Star](/images/IN4343/edf_star.png)
+
+## Aperiodic Scheduling Algorithms Summary
+
+![Aperiodic Scheduling Algorithms Overview](/images/IN4343/aperiodic_scheduling_overview.png)
