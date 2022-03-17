@@ -13,9 +13,7 @@ With this algorithm, we select the task with the earliest __relative__ deadline 
 
 ### Optimality
 
-![EDD Optimality 1](/images/IN4343/edd-optimality-1.png)]
-
-![EDD Optimality 2](/images/IN4343/edd-optimality-2.png)]
+![EDD Optimality 1](/images/IN4343/edd-optimality-1.png)
 
 Based on this, if we continue swapping, we end up with the plan that minimizes that maximum lateness. Overall, EDD takes $O(n\text{log}n)$ for queue ordering.
 

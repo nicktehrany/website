@@ -87,3 +87,29 @@ $$\prod_{i=1}^{n}(U_i+1)\leq 2$$
 HB gives a tighter bound than LL.
 
 ![LL compared to HB](/images/IN4343/RM.png)
+
+## Deadline Monotonic (DM)
+
+Unlike the Rate Monotonic, where the relative deadline is the same as the period, now the relative deadline is before the end of the period. Similarly, with RM we execute the task with the shortest relative deadline first. Hence, it is also a preemptive algorithm.
+
+### Response Time Analysis
+
+Since the approach for measuring utilization (with the formula from RM that sums the utilization of tasks) is too pessimistic to show if a task set is schedulable under DM, we need to use the response time analysis that focuses on the critical instances of tasks (as this shows the worst case scenario). We assume that the task indexes are ordered in increasing relative deadline order, then we can compute th longest response time with $T_i=C_i + I_i$ with $C_i$ computation time and $I_i$ being the interference from higher priority tasks. We then show that it is schedulable by $R_i \leq D_i$.
+
+#### Computing Interference
+
+We compute the worst case response time (WCRT) with interference of task $T_k$ on $T_i$ in the interval from $[0,R_i]$ as
+
+$$I_{ik}=\lceil \frac{R_i}{T_k}\rceil C_k$$
+
+Similarly, we do this for all higher priority tasks as
+
+$$I_i=\sum_{k=1}^{i-1}\lceil \frac{R_i}{T_k}\rceil C_k$$
+
+However, this requires the response time ($R_i$) which was to goal to be calculated (we need the interference to calculate the response time but also the response time to calculate the interference). To solve this we make assumptions on the value of the response (since it's on both sides of the equation), calculate the interference based on it, and change the assumption until we reached a fixed point (reach convergence).
+
+![WCRT Example](/images/IN4343/WCRT_Example.png)
+
+## Dynamic Scheduling Policies
+
+Instead a constant priority assignment for each task, we now assign priorities to each job on its release using EDF.
