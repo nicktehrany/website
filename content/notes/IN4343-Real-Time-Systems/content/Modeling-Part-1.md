@@ -35,6 +35,8 @@ Tasks can be in the __idle state__ or a __blocked state__ as well, where in the 
 
 A RT task is then called __feasible__ when it completes before the absolute deadline $f_i \leq d_i$ or $R-I \leq D_i$. __Schedulable__ then means that there exists an algorithm that can produce a feasible schedule.
 
+Absolute deadline is given as $d_I$ and the relative deadline as $D_i$. 
+
 We have additional timing constraints ![Timing Constraints](/images/IN4343/timing_constraints.png). Also worth mentioning is that jobs are task instances. A task specifies something to do and a job is then an instance of doing that task, meaning multiple jobs of a task can exist.
 
 ### Types of Tasks
