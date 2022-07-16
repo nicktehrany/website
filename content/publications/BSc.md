@@ -4,16 +4,15 @@ description = "BSc Computer Science Thesis"
 featuredalt = ""
 featuredpath = "date"
 linktitle = "thesis"
-title = "BSc Computer Science Thesis"
-slug = "BSc Computer Science Thesis"
+title = "Evaluating Performance Characteristics of the PMDK Persistent Memory Software Stack"
+slug = "bsc-thesis"
 type = "thesis"
 aliases = "/thesis/"
 +++
 
+### Abstract
 
-## "Evaluating Performance Characteristics of the PMDK Persistent Memory Software Stack"
-
-Abstract: Society nowadays revolves more and more around data. Data Science, Machine Learning,
+Society nowadays revolves more and more around data. Data Science, Machine Learning,
 and Artificial Intelligence depend on large amounts of data to conduct research, and
 train machine learning models and agents. With the ever increasing amount of data,
 comes the need for faster storage. The quest for new storage devices has resulted in the

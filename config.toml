@@ -11,13 +11,13 @@ paginate     = 6
   dateformNumTime = "2006-01-02 15:04"
 
   # Subtitle for home
-  homeSubtitle = "My website with all my current & past work and projects."
+  homeSubtitle = "I'm currently a computer science student with main interests in Storage Systems, Operating Systems, Distributed Systems, Blockchain Systems, and Computer Architecture."
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
 
   # Enable sharing buttons, if you linke
-  enableSharingButtons = true
+  enableSharingButtons = false
 
   # Metadata mostly used in document's head
   description = "My website with what I'm currently working on."
@@ -25,7 +25,10 @@ paginate     = 6
   images = [""]
 
   # Default theme "light" or "dark"
-  defaultTheme = "dark"
+  defaultTheme = "light"
+
+  footerLeft = "Contact: tehrany.nick@gmail.com"
+  # footerRight = "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"
 
 [taxonomies]
     category = "categories"
@@ -51,25 +54,32 @@ paginate     = 6
     identifier = "publications"
     name       = "Publications"
     url        = "/publications"
-    weight     = "2"
+    weight     = "1"
 
   [[menu.main]]
     identifier = "awards"
     name       = "Awards"
     url        = "/awards"
-    weight     = "1"
+    weight     = "3"
 
   [[menu.main]]
-    identifier = "projects"
-    name       = "Projects"
-    url        = "/projects"
-    weight     = "3"
+    identifier = "talks"
+    name       = "Talks"
+    url        = "/talks"
+    weight     = "2"
 
   [[menu.main]]
     identifier = "notes"
     name       = "Uni Notes"
     url        = "/notes"
     weight     = "4"
+
+  [[menu.main]]
+    identifier = "about"
+    name       = "About"
+    url        = "/about"
+    weight     = "5"
+
 
   [[params.social]]
     name = "github"

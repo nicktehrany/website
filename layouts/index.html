@@ -1,6 +1,8 @@
 {{ define "main" }}
     <main aria-role="main">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div>
             {{ if .Site.Params.Portrait.Path }}
                <img src="{{ .Site.Params.Portrait.Path }}" class="circle" alt="{{ .Site.Params.Portrait.Alt }}" style="max-width:{{ .Site.Params.Portrait.MaxWidth }}" />
@@ -8,19 +10,21 @@
 
             <h1>{{ .Site.Title }}</h1>
             {{- with .Site.Params.homeSubtitle }}
-                <p>{{.}}</p>
-            {{- end }}
-
-            {{- with .Site.Params.social }}
-                <div>
-                    {{ partial "social-icons.html" . }}
-                    <a href="/misc/cv.pdf" target="_self"><i class="ai ai-cv ai-2x"></i></a>
-                </div>
+            <p>I'm currently a computer science student with main interests in Storage Systems, Operating Systems,<br>Distributed Systems, Blockchain Systems, and Computer Architecture.</p>
+                <!-- <p>{{.}}</p> -->
             {{- end }}
             <div>
                 <a href="https://scholar.google.com/citations?user=yWgr7XsAAAAJ&hl=en" target="_self"><i class="ai ai-google-scholar ai-2x"></i></a>
                 <a href="https://www.semanticscholar.org/author/Tehrany/2105151990" target="_self"><i class="ai ai-semantic-scholar ai-2x"></i></a>
             </div>
+            <!-- {{- with .Site.Params.social }} -->
+            <div>
+                <!-- {{ partial "social-icons.html" . }} -->
+                <a href="https://www.linkedin.com/in/nicktehrany/" target="_self"><i class="fa fa-linkedin-square" style="font-size:36px"></i></a>
+                <a href="https://github.com/nicktehrany" target="_self"><i class="fa fa-github" style="font-size:34px"></i></a>
+                <a href="/misc/cv.pdf" target="_self"><i class="ai ai-cv ai-2x"></i></a>
+            </div>
+            <!-- {{- end }} -->
         </div>
     </main>
 {{ end }}
