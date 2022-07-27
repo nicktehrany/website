@@ -42,7 +42,7 @@ paginate     = 6
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "cd nicktehrany"
+      logoText = "gst@nty: $ cd ~"
       logoHomeLink = "/"
     # or
     #
