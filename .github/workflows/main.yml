@@ -30,7 +30,7 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: nicktehrany/nicktehrany.github.io
-          user_name: nicktehrany
+          user_name: ${GITHUB_ACTOR}
           commit_message: ${{ github.event.head_commit.message }}
-          user_email: nicktehrany1@gmail.com
+          user_email: ${GITHUB_ACTOR}@users.noreply.github.com
           publish_branch: master
