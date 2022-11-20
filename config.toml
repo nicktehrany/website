@@ -11,7 +11,7 @@ paginate     = 6
   dateformNumTime = "2006-01-02 15:04"
 
   # Subtitle for home
-  homeSubtitle = "I'm currently a computer science student with main interests in Storage Systems, Operating Systems, Distributed Systems, Blockchain Systems, and Computer Architecture."
+  homeSubtitle = "I'm currently a MSc computer science student, and my main interests are in Storage Systems and Technologies, Operating Systems, Distributed Systems, and Computer Architecture."
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -20,7 +20,7 @@ paginate     = 6
   enableSharingButtons = false
 
   # Metadata mostly used in document's head
-  description = "My website with what I'm currently working on."
+  description = "My website with my past and ongoing work."
   keywords = "homepage "
   images = [""]
 
@@ -28,7 +28,6 @@ paginate     = 6
   defaultTheme = "light"
 
   footerLeft = "Contact: tehrany.nick@gmail.com"
-  # footerRight = "Made with &#10084; by <a href=\"https://github.com/rhazdon\">Djordje Atlialp</a>"
 
 [taxonomies]
     category = "categories"
@@ -70,7 +69,7 @@ paginate     = 6
 
   [[menu.main]]
     identifier = "notes"
-    name       = "Uni Notes"
+    name       = "Notes"
     url        = "/notes"
     weight     = "4"
 
@@ -79,7 +78,6 @@ paginate     = 6
     name       = "About"
     url        = "/about"
     weight     = "5"
-
 
   [[params.social]]
     name = "github"
